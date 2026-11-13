@@ -6,6 +6,7 @@ import { renderHome } from './ui/home';
 import { renderLines } from './ui/lines';
 import { renderPlay } from './ui/play';
 import { renderRecords } from './ui/records';
+import { renderTable } from './ui/table';
 
 const app = document.getElementById('app')!;
 let cleanup: (() => void) | void;
@@ -20,7 +21,7 @@ function shell(active: 'home' | 'lines' | 'records'): HTMLElement {
       <a href="/" data-link ${active === 'home' ? 'aria-current="page"' : ''}>${icon.home}<span>홈</span></a>
       <a href="/element" data-link ${active === 'lines' ? 'aria-current="page"' : ''}>${icon.lines}<span>노선</span></a>
       <a href="/records" data-link ${active === 'records' ? 'aria-current="page"' : ''}>${icon.records}<span>내 기록</span></a>
-      <div class="svc"><span class="caption-strong">서비스</span>${svc.map((s) => `<a href="/${s.id}" data-link><span class="dot" style="border:3px solid var(--primary);background:var(--bg)"></span>${s.name}<span class="live">운행 중</span></a>`).join('')}</div>
+      <div class="svc"><span class="caption-strong">서비스</span>${svc.map((s) => `<a href="/${s.id}" data-link><span class="dot" style="border:3px solid var(--primary);background:var(--bg)"></span>${s.name}<span class="live">운행 중</span></a><a class="sub-link" href="/${s.id}" data-link>노선도</a><a class="sub-link" href="/${s.id}/table" data-link>주기율표 학습</a>`).join('')}</div>
     </nav>
     <div class="col"><main id="main"></main><footer class="footer">${FOOTER}</footer></div>
   </div>`;
@@ -34,6 +35,7 @@ function render() {
   const parts = url.pathname.split('/').filter(Boolean);
   window.scrollTo(0, 0);
   if (parts[0] === 'element' || parts[0] === 'lines') {
+    if (parts[1] === 'table') { cleanup = renderTable(shell('lines'), Number(url.searchParams.get('z')) || undefined); return; }
     const lineId = parts[1];
     const mode = url.searchParams.get('mode');
     if (lineId && mode) { cleanup = renderPlay(app, lineId, mode, url.searchParams); return; }

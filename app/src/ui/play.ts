@@ -262,7 +262,7 @@ function renderResult(app: HTMLElement, c: ResultCtx) {
     <div class="stats">
       <div><span class="caption sub">시간</span><span class="title-m num">${recTime(res.duration_ms)}</span>${recNote}</div>
       <div><span class="caption sub">정확도</span><span class="title-m num">${pct(res.accuracy)}</span><span class="caption sub num">${res.first_try_correct} / ${res.total_stations}역 한 번에</span></div>
-      <div><span class="caption sub">분당 역</span><span class="title-m num">${res.per_minute.toFixed(1)}</span></div>
+      <div><span class="caption sub">평균 타수</span><span class="title-m num">${res.cpm}<span class="caption sub"> 타/분</span></span></div>
     </div>
     <div class="stamps" aria-label="도장">${stamps.map((s, i) => `${i ? `<span class="bar ${s.got ? 'got' : ''}"></span>` : ''}<span class="st ${s.got ? 'got' : ''}"><span class="ring">${s.ic}</span>${s.label}</span>`).join('')}</div>
     <section class="review">

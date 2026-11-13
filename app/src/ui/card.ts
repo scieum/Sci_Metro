@@ -60,7 +60,7 @@ export async function drawCard(o: { line: Line; modeLabel: string; stops: Elemen
   g.fillText(pct(o.res.accuracy), 660, by + 140);
   g.fillStyle = '#6b7280'; g.font = font(400, 40);
   g.fillText(`한 번에 맞힌 역 ${o.res.first_try_correct} / ${o.res.total_stations}`, 84, by + 230);
-  g.fillText(`분당 ${o.res.per_minute.toFixed(1)}역`, 664, by + 230);
+  g.fillText(`평균 ${o.res.cpm}타/분`, 664, by + 230);
 
   g.fillStyle = '#f5f6f8'; g.fillRect(0, H - 300, W, 300);
   g.fillStyle = '#191c24'; g.font = font(700, 44); g.fillText('너도 종착역까지 달려 볼래?', 84, H - 190);

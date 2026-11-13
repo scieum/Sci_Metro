@@ -1,4 +1,4 @@
-import { exactCi, matchInstant, matchSubmit, normalize, startsHangul, startsLatin } from './matcher';
+import { exactCi, matchInstant, matchSubmit, normalize, startsHangul, startsLatin, strokes } from './matcher';
 import type { FieldSpec, Judgement, ModeSpec, RunResult, Station } from './types';
 
 /** 역마다 보여 줄 칸을 고른다. 같은 칸이 max_run 넘게 이어지지 않게, 덜 나온 칸을 먼저. */
@@ -37,6 +37,8 @@ export class Run {
   finishedAt: number | null = null;
   readonly wrongs: number[];
   readonly skipped: boolean[];
+  /** 맞힌 답을 입력한 타수 합 (평균 타수 계산용) */
+  strokes = 0;
   /** 달리는 순서. mode.shuffle이면 섞인 순서 */
   readonly stations: Station[];
 
@@ -82,7 +84,7 @@ export class Run {
     const key = this.pickKey(text);
     if (!key || this.fields[key]?.input !== 'instant') return { kind: 'wait' };
     const r = matchInstant(text, this.station.fields[key]);
-    if (r === 'correct') return this.correct(key, null);
+    if (r === 'correct') return this.correct(key, null, text);
     return r === 'wrong' ? this.wrong() : { kind: 'wait' };
   }
 
@@ -93,9 +95,9 @@ export class Run {
     const key = this.pickKey(text) ?? this.answerKeys[0];
     const spec = this.fields[key];
     const shown = this.station.fields[key];
-    if (spec?.matcher === 'latin_ci') return exactCi(text, shown) ? this.correct(key, null) : this.wrong();
+    if (spec?.matcher === 'latin_ci') return exactCi(text, shown) ? this.correct(key, null, text) : this.wrong();
     const r = matchSubmit(text, shown, this.station.aliases[key]);
-    return r.ok ? this.correct(key, r.viaAlias) : this.wrong();
+    return r.ok ? this.correct(key, r.viaAlias, text) : this.wrong();
   }
 
   /** '모르겠어요' / Esc: 정답을 보여 주고 넘어간다. 틀린 역으로 기록. */
@@ -113,8 +115,9 @@ export class Run {
     return ans ? ans[0] + '○'.repeat(Math.max(1, ans.length - 1)) : null;
   }
 
-  private correct(key: string, viaAlias: string | null): Judgement {
+  private correct(key: string, viaAlias: string | null, typed: string): Judgement {
     const shown = this.station.fields[key];
+    this.strokes += strokes(typed);
     this.advance();
     return { kind: 'correct', key, shown, viaAlias, finished: this.finished };
   }
@@ -143,6 +146,7 @@ export class Run {
       missed_station_ids: this.stations.filter((_, i) => !this.firstTry(i)).map((s) => s.id),
       accuracy: first / total,
       per_minute: total / (duration / 60000),
+      cpm: Math.round(this.strokes / (duration / 60000)),
     };
   }
 }

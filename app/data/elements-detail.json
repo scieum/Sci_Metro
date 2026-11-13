@@ -1,0 +1,2248 @@
+{
+ "reviewed": false,
+ "note": "값은 교사 검수 전. null = 모름 또는 측정되지 않음. 녹는점·끓는점은 1기압 기준(°C).",
+ "elements": {
+  "1": {
+   "mass": 1.008,
+   "mass_estimated": false,
+   "density": 0.0899,
+   "density_unit": "g/L",
+   "melting_c": -259.16,
+   "boiling_c": -252.88,
+   "electronegativity": 2.2,
+   "state": "기체",
+   "discovered": {
+    "year": 1766,
+    "ancient": false,
+    "by": "헨리 캐번디시"
+   },
+   "zh": "氫",
+   "hanja": "水素",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "2": {
+   "mass": 4.0026,
+   "mass_estimated": false,
+   "density": 0.1786,
+   "density_unit": "g/L",
+   "melting_c": null,
+   "boiling_c": -268.93,
+   "electronegativity": null,
+   "state": "기체",
+   "discovered": {
+    "year": 1868,
+    "ancient": false,
+    "by": "피에르 장센, 노먼 로키어"
+   },
+   "zh": "氦",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "3": {
+   "mass": 6.94,
+   "mass_estimated": false,
+   "density": 0.534,
+   "density_unit": "g/cm³",
+   "melting_c": 180.5,
+   "boiling_c": 1330,
+   "electronegativity": 0.98,
+   "state": "고체",
+   "discovered": {
+    "year": 1817,
+    "ancient": false,
+    "by": "요한 아우구스트 아르프베드손"
+   },
+   "zh": "鋰",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "4": {
+   "mass": 9.0122,
+   "mass_estimated": false,
+   "density": 1.85,
+   "density_unit": "g/cm³",
+   "melting_c": 1287,
+   "boiling_c": 2469,
+   "electronegativity": 1.57,
+   "state": "고체",
+   "discovered": {
+    "year": 1798,
+    "ancient": false,
+    "by": "루이니콜라 보클랭"
+   },
+   "zh": "鈹",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "5": {
+   "mass": 10.81,
+   "mass_estimated": false,
+   "density": 2.34,
+   "density_unit": "g/cm³",
+   "melting_c": 2076,
+   "boiling_c": 3927,
+   "electronegativity": 2.04,
+   "state": "고체",
+   "discovered": {
+    "year": 1808,
+    "ancient": false,
+    "by": "게이뤼삭, 테나르, 데이비"
+   },
+   "zh": "硼",
+   "hanja": "硼素",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "6": {
+   "mass": 12.011,
+   "mass_estimated": false,
+   "density": 2.267,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": 2.55,
+   "state": "고체",
+   "discovered": {
+    "year": null,
+    "ancient": true,
+    "by": "고대부터 알려짐"
+   },
+   "zh": "碳",
+   "hanja": "炭素",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "7": {
+   "mass": 14.007,
+   "mass_estimated": false,
+   "density": 1.2506,
+   "density_unit": "g/L",
+   "melting_c": -210,
+   "boiling_c": -195.79,
+   "electronegativity": 3.04,
+   "state": "기체",
+   "discovered": {
+    "year": 1772,
+    "ancient": false,
+    "by": "대니얼 러더퍼드"
+   },
+   "zh": "氮",
+   "hanja": "窒素",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "8": {
+   "mass": 15.999,
+   "mass_estimated": false,
+   "density": 1.429,
+   "density_unit": "g/L",
+   "melting_c": -218.79,
+   "boiling_c": -182.96,
+   "electronegativity": 3.44,
+   "state": "기체",
+   "discovered": {
+    "year": 1774,
+    "ancient": false,
+    "by": "조지프 프리스틀리, 칼 빌헬름 셸레"
+   },
+   "zh": "氧",
+   "hanja": "酸素",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "9": {
+   "mass": 18.998,
+   "mass_estimated": false,
+   "density": 1.696,
+   "density_unit": "g/L",
+   "melting_c": -219.67,
+   "boiling_c": -188.11,
+   "electronegativity": 3.98,
+   "state": "기체",
+   "discovered": {
+    "year": 1886,
+    "ancient": false,
+    "by": "앙리 무아상"
+   },
+   "zh": "氟",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "10": {
+   "mass": 20.18,
+   "mass_estimated": false,
+   "density": 0.9002,
+   "density_unit": "g/L",
+   "melting_c": -248.59,
+   "boiling_c": -246.05,
+   "electronegativity": null,
+   "state": "기체",
+   "discovered": {
+    "year": 1898,
+    "ancient": false,
+    "by": "윌리엄 램지, 모리스 트래버스"
+   },
+   "zh": "氖",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "11": {
+   "mass": 22.99,
+   "mass_estimated": false,
+   "density": 0.968,
+   "density_unit": "g/cm³",
+   "melting_c": 97.79,
+   "boiling_c": 882.94,
+   "electronegativity": 0.93,
+   "state": "고체",
+   "discovered": {
+    "year": 1807,
+    "ancient": false,
+    "by": "험프리 데이비"
+   },
+   "zh": "鈉",
+   "hanja": null,
+   "symbol_origin": "라틴어 natrium",
+   "society_name": "소듐"
+  },
+  "12": {
+   "mass": 24.305,
+   "mass_estimated": false,
+   "density": 1.738,
+   "density_unit": "g/cm³",
+   "melting_c": 650,
+   "boiling_c": 1091,
+   "electronegativity": 1.31,
+   "state": "고체",
+   "discovered": {
+    "year": 1755,
+    "ancient": false,
+    "by": "조지프 블랙"
+   },
+   "zh": "鎂",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "13": {
+   "mass": 26.982,
+   "mass_estimated": false,
+   "density": 2.7,
+   "density_unit": "g/cm³",
+   "melting_c": 660.32,
+   "boiling_c": 2470,
+   "electronegativity": 1.61,
+   "state": "고체",
+   "discovered": {
+    "year": 1825,
+    "ancient": false,
+    "by": "한스 크리스티안 외르스테드"
+   },
+   "zh": "鋁",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "14": {
+   "mass": 28.085,
+   "mass_estimated": false,
+   "density": 2.329,
+   "density_unit": "g/cm³",
+   "melting_c": 1414,
+   "boiling_c": 3265,
+   "electronegativity": 1.9,
+   "state": "고체",
+   "discovered": {
+    "year": 1824,
+    "ancient": false,
+    "by": "옌스 야코브 베르셀리우스"
+   },
+   "zh": "矽",
+   "hanja": "硅素",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "15": {
+   "mass": 30.974,
+   "mass_estimated": false,
+   "density": 1.82,
+   "density_unit": "g/cm³",
+   "melting_c": 44.15,
+   "boiling_c": 280.5,
+   "electronegativity": 2.19,
+   "state": "고체",
+   "discovered": {
+    "year": 1669,
+    "ancient": false,
+    "by": "헤니히 브란트"
+   },
+   "zh": "磷",
+   "hanja": "燐",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "16": {
+   "mass": 32.06,
+   "mass_estimated": false,
+   "density": 2.067,
+   "density_unit": "g/cm³",
+   "melting_c": 115.21,
+   "boiling_c": 444.6,
+   "electronegativity": 2.58,
+   "state": "고체",
+   "discovered": {
+    "year": null,
+    "ancient": true,
+    "by": "고대부터 알려짐"
+   },
+   "zh": "硫",
+   "hanja": "黃",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "17": {
+   "mass": 35.45,
+   "mass_estimated": false,
+   "density": 3.2,
+   "density_unit": "g/L",
+   "melting_c": -101.5,
+   "boiling_c": -34.04,
+   "electronegativity": 3.16,
+   "state": "기체",
+   "discovered": {
+    "year": 1774,
+    "ancient": false,
+    "by": "칼 빌헬름 셸레"
+   },
+   "zh": "氯",
+   "hanja": "鹽素",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "18": {
+   "mass": 39.948,
+   "mass_estimated": false,
+   "density": 1.784,
+   "density_unit": "g/L",
+   "melting_c": -189.34,
+   "boiling_c": -185.85,
+   "electronegativity": null,
+   "state": "기체",
+   "discovered": {
+    "year": 1894,
+    "ancient": false,
+    "by": "레일리 경, 윌리엄 램지"
+   },
+   "zh": "氬",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "19": {
+   "mass": 39.098,
+   "mass_estimated": false,
+   "density": 0.862,
+   "density_unit": "g/cm³",
+   "melting_c": 63.5,
+   "boiling_c": 759,
+   "electronegativity": 0.82,
+   "state": "고체",
+   "discovered": {
+    "year": 1807,
+    "ancient": false,
+    "by": "험프리 데이비"
+   },
+   "zh": "鉀",
+   "hanja": null,
+   "symbol_origin": "라틴어 kalium",
+   "society_name": "포타슘"
+  },
+  "20": {
+   "mass": 40.078,
+   "mass_estimated": false,
+   "density": 1.55,
+   "density_unit": "g/cm³",
+   "melting_c": 842,
+   "boiling_c": 1484,
+   "electronegativity": 1,
+   "state": "고체",
+   "discovered": {
+    "year": 1808,
+    "ancient": false,
+    "by": "험프리 데이비"
+   },
+   "zh": "鈣",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "21": {
+   "mass": 44.956,
+   "mass_estimated": false,
+   "density": 2.985,
+   "density_unit": "g/cm³",
+   "melting_c": 1541,
+   "boiling_c": 2836,
+   "electronegativity": 1.36,
+   "state": "고체",
+   "discovered": {
+    "year": 1879,
+    "ancient": false,
+    "by": "라르스 프레드리크 닐손"
+   },
+   "zh": "鈧",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "22": {
+   "mass": 47.867,
+   "mass_estimated": false,
+   "density": 4.506,
+   "density_unit": "g/cm³",
+   "melting_c": 1668,
+   "boiling_c": 3287,
+   "electronegativity": 1.54,
+   "state": "고체",
+   "discovered": {
+    "year": 1791,
+    "ancient": false,
+    "by": "윌리엄 그레고어"
+   },
+   "zh": "鈦",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "23": {
+   "mass": 50.942,
+   "mass_estimated": false,
+   "density": 6,
+   "density_unit": "g/cm³",
+   "melting_c": 1910,
+   "boiling_c": 3407,
+   "electronegativity": 1.63,
+   "state": "고체",
+   "discovered": {
+    "year": 1801,
+    "ancient": false,
+    "by": "안드레스 마누엘 델 리오"
+   },
+   "zh": "釩",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "24": {
+   "mass": 51.996,
+   "mass_estimated": false,
+   "density": 7.19,
+   "density_unit": "g/cm³",
+   "melting_c": 1907,
+   "boiling_c": 2671,
+   "electronegativity": 1.66,
+   "state": "고체",
+   "discovered": {
+    "year": 1797,
+    "ancient": false,
+    "by": "루이니콜라 보클랭"
+   },
+   "zh": "鉻",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "25": {
+   "mass": 54.938,
+   "mass_estimated": false,
+   "density": 7.21,
+   "density_unit": "g/cm³",
+   "melting_c": 1246,
+   "boiling_c": 2061,
+   "electronegativity": 1.55,
+   "state": "고체",
+   "discovered": {
+    "year": 1774,
+    "ancient": false,
+    "by": "요한 고틀리브 간"
+   },
+   "zh": "錳",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "26": {
+   "mass": 55.845,
+   "mass_estimated": false,
+   "density": 7.874,
+   "density_unit": "g/cm³",
+   "melting_c": 1538,
+   "boiling_c": 2862,
+   "electronegativity": 1.83,
+   "state": "고체",
+   "discovered": {
+    "year": null,
+    "ancient": true,
+    "by": "고대부터 알려짐"
+   },
+   "zh": "鐵",
+   "hanja": "鐵",
+   "symbol_origin": "라틴어 ferrum",
+   "society_name": null
+  },
+  "27": {
+   "mass": 58.933,
+   "mass_estimated": false,
+   "density": 8.9,
+   "density_unit": "g/cm³",
+   "melting_c": 1495,
+   "boiling_c": 2927,
+   "electronegativity": 1.88,
+   "state": "고체",
+   "discovered": {
+    "year": 1735,
+    "ancient": false,
+    "by": "게오르크 브란트"
+   },
+   "zh": "鈷",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "28": {
+   "mass": 58.693,
+   "mass_estimated": false,
+   "density": 8.908,
+   "density_unit": "g/cm³",
+   "melting_c": 1455,
+   "boiling_c": 2730,
+   "electronegativity": 1.91,
+   "state": "고체",
+   "discovered": {
+    "year": 1751,
+    "ancient": false,
+    "by": "악셀 프레드리크 크론스테트"
+   },
+   "zh": "鎳",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "29": {
+   "mass": 63.546,
+   "mass_estimated": false,
+   "density": 8.96,
+   "density_unit": "g/cm³",
+   "melting_c": 1084.62,
+   "boiling_c": 2562,
+   "electronegativity": 1.9,
+   "state": "고체",
+   "discovered": {
+    "year": null,
+    "ancient": true,
+    "by": "고대부터 알려짐"
+   },
+   "zh": "銅",
+   "hanja": "銅",
+   "symbol_origin": "라틴어 cuprum",
+   "society_name": null
+  },
+  "30": {
+   "mass": 65.38,
+   "mass_estimated": false,
+   "density": 7.14,
+   "density_unit": "g/cm³",
+   "melting_c": 419.53,
+   "boiling_c": 907,
+   "electronegativity": 1.65,
+   "state": "고체",
+   "discovered": {
+    "year": 1746,
+    "ancient": false,
+    "by": "안드레아스 마르크그라프"
+   },
+   "zh": "鋅",
+   "hanja": "亞鉛",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "31": {
+   "mass": 69.723,
+   "mass_estimated": false,
+   "density": 5.91,
+   "density_unit": "g/cm³",
+   "melting_c": 29.76,
+   "boiling_c": 2400,
+   "electronegativity": 1.81,
+   "state": "고체",
+   "discovered": {
+    "year": 1875,
+    "ancient": false,
+    "by": "르코크 드 부아보드랑"
+   },
+   "zh": "鎵",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "32": {
+   "mass": 72.63,
+   "mass_estimated": false,
+   "density": 5.323,
+   "density_unit": "g/cm³",
+   "melting_c": 938.25,
+   "boiling_c": 2833,
+   "electronegativity": 2.01,
+   "state": "고체",
+   "discovered": {
+    "year": 1886,
+    "ancient": false,
+    "by": "클레멘스 빙클러"
+   },
+   "zh": "鍺",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "33": {
+   "mass": 74.922,
+   "mass_estimated": false,
+   "density": 5.727,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": 2.18,
+   "state": "고체",
+   "discovered": {
+    "year": 1250,
+    "ancient": false,
+    "by": "알베르투스 마그누스"
+   },
+   "zh": "砷",
+   "hanja": "砒素",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "34": {
+   "mass": 78.971,
+   "mass_estimated": false,
+   "density": 4.81,
+   "density_unit": "g/cm³",
+   "melting_c": 221,
+   "boiling_c": 685,
+   "electronegativity": 2.55,
+   "state": "고체",
+   "discovered": {
+    "year": 1817,
+    "ancient": false,
+    "by": "옌스 야코브 베르셀리우스"
+   },
+   "zh": "硒",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "35": {
+   "mass": 79.904,
+   "mass_estimated": false,
+   "density": 3.1028,
+   "density_unit": "g/cm³",
+   "melting_c": -7.2,
+   "boiling_c": 58.8,
+   "electronegativity": 2.96,
+   "state": "액체",
+   "discovered": {
+    "year": 1826,
+    "ancient": false,
+    "by": "앙투안 제롬 발라르"
+   },
+   "zh": "溴",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "36": {
+   "mass": 83.798,
+   "mass_estimated": false,
+   "density": 3.749,
+   "density_unit": "g/L",
+   "melting_c": -157.37,
+   "boiling_c": -153.42,
+   "electronegativity": 3,
+   "state": "기체",
+   "discovered": {
+    "year": 1898,
+    "ancient": false,
+    "by": "윌리엄 램지, 모리스 트래버스"
+   },
+   "zh": "氪",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "37": {
+   "mass": 85.468,
+   "mass_estimated": false,
+   "density": 1.532,
+   "density_unit": "g/cm³",
+   "melting_c": 39.31,
+   "boiling_c": 688,
+   "electronegativity": 0.82,
+   "state": "고체",
+   "discovered": {
+    "year": 1861,
+    "ancient": false,
+    "by": "로베르트 분젠, 구스타프 키르히호프"
+   },
+   "zh": "銣",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "38": {
+   "mass": 87.62,
+   "mass_estimated": false,
+   "density": 2.64,
+   "density_unit": "g/cm³",
+   "melting_c": 777,
+   "boiling_c": 1377,
+   "electronegativity": 0.95,
+   "state": "고체",
+   "discovered": {
+    "year": 1790,
+    "ancient": false,
+    "by": "에이데어 크로퍼드"
+   },
+   "zh": "鍶",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "39": {
+   "mass": 88.906,
+   "mass_estimated": false,
+   "density": 4.472,
+   "density_unit": "g/cm³",
+   "melting_c": 1526,
+   "boiling_c": 3345,
+   "electronegativity": 1.22,
+   "state": "고체",
+   "discovered": {
+    "year": 1794,
+    "ancient": false,
+    "by": "요한 가돌린"
+   },
+   "zh": "釔",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "40": {
+   "mass": 91.224,
+   "mass_estimated": false,
+   "density": 6.52,
+   "density_unit": "g/cm³",
+   "melting_c": 1855,
+   "boiling_c": 4409,
+   "electronegativity": 1.33,
+   "state": "고체",
+   "discovered": {
+    "year": 1789,
+    "ancient": false,
+    "by": "마르틴 하인리히 클라프로트"
+   },
+   "zh": "鋯",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "41": {
+   "mass": 92.906,
+   "mass_estimated": false,
+   "density": 8.57,
+   "density_unit": "g/cm³",
+   "melting_c": 2477,
+   "boiling_c": 4744,
+   "electronegativity": 1.6,
+   "state": "고체",
+   "discovered": {
+    "year": 1801,
+    "ancient": false,
+    "by": "찰스 해칫"
+   },
+   "zh": "鈮",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "42": {
+   "mass": 95.95,
+   "mass_estimated": false,
+   "density": 10.28,
+   "density_unit": "g/cm³",
+   "melting_c": 2623,
+   "boiling_c": 4639,
+   "electronegativity": 2.16,
+   "state": "고체",
+   "discovered": {
+    "year": 1778,
+    "ancient": false,
+    "by": "칼 빌헬름 셸레"
+   },
+   "zh": "鉬",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "43": {
+   "mass": 98,
+   "mass_estimated": true,
+   "density": 11,
+   "density_unit": "g/cm³",
+   "melting_c": 2157,
+   "boiling_c": 4265,
+   "electronegativity": 1.9,
+   "state": "고체",
+   "discovered": {
+    "year": 1937,
+    "ancient": false,
+    "by": "카를로 페리에, 에밀리오 세그레"
+   },
+   "zh": "鎝",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "44": {
+   "mass": 101.07,
+   "mass_estimated": false,
+   "density": 12.45,
+   "density_unit": "g/cm³",
+   "melting_c": 2334,
+   "boiling_c": 4150,
+   "electronegativity": 2.2,
+   "state": "고체",
+   "discovered": {
+    "year": 1844,
+    "ancient": false,
+    "by": "카를 에른스트 클라우스"
+   },
+   "zh": "釕",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "45": {
+   "mass": 102.91,
+   "mass_estimated": false,
+   "density": 12.41,
+   "density_unit": "g/cm³",
+   "melting_c": 1964,
+   "boiling_c": 3695,
+   "electronegativity": 2.28,
+   "state": "고체",
+   "discovered": {
+    "year": 1804,
+    "ancient": false,
+    "by": "윌리엄 하이드 울러스턴"
+   },
+   "zh": "銠",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "46": {
+   "mass": 106.42,
+   "mass_estimated": false,
+   "density": 12.023,
+   "density_unit": "g/cm³",
+   "melting_c": 1554.9,
+   "boiling_c": 2963,
+   "electronegativity": 2.2,
+   "state": "고체",
+   "discovered": {
+    "year": 1803,
+    "ancient": false,
+    "by": "윌리엄 하이드 울러스턴"
+   },
+   "zh": "鈀",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "47": {
+   "mass": 107.87,
+   "mass_estimated": false,
+   "density": 10.49,
+   "density_unit": "g/cm³",
+   "melting_c": 961.78,
+   "boiling_c": 2162,
+   "electronegativity": 1.93,
+   "state": "고체",
+   "discovered": {
+    "year": null,
+    "ancient": true,
+    "by": "고대부터 알려짐"
+   },
+   "zh": "銀",
+   "hanja": "銀",
+   "symbol_origin": "라틴어 argentum",
+   "society_name": null
+  },
+  "48": {
+   "mass": 112.41,
+   "mass_estimated": false,
+   "density": 8.65,
+   "density_unit": "g/cm³",
+   "melting_c": 321.07,
+   "boiling_c": 767,
+   "electronegativity": 1.69,
+   "state": "고체",
+   "discovered": {
+    "year": 1817,
+    "ancient": false,
+    "by": "프리드리히 슈트로마이어"
+   },
+   "zh": "鎘",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "49": {
+   "mass": 114.82,
+   "mass_estimated": false,
+   "density": 7.31,
+   "density_unit": "g/cm³",
+   "melting_c": 156.6,
+   "boiling_c": 2072,
+   "electronegativity": 1.78,
+   "state": "고체",
+   "discovered": {
+    "year": 1863,
+    "ancient": false,
+    "by": "페르디난트 라이히, 히로니무스 리히터"
+   },
+   "zh": "銦",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "50": {
+   "mass": 118.71,
+   "mass_estimated": false,
+   "density": 7.287,
+   "density_unit": "g/cm³",
+   "melting_c": 231.93,
+   "boiling_c": 2602,
+   "electronegativity": 1.96,
+   "state": "고체",
+   "discovered": {
+    "year": null,
+    "ancient": true,
+    "by": "고대부터 알려짐"
+   },
+   "zh": "錫",
+   "hanja": "朱錫",
+   "symbol_origin": "라틴어 stannum",
+   "society_name": null
+  },
+  "51": {
+   "mass": 121.76,
+   "mass_estimated": false,
+   "density": 6.697,
+   "density_unit": "g/cm³",
+   "melting_c": 630.63,
+   "boiling_c": 1587,
+   "electronegativity": 2.05,
+   "state": "고체",
+   "discovered": {
+    "year": null,
+    "ancient": true,
+    "by": "고대부터 알려짐"
+   },
+   "zh": "銻",
+   "hanja": null,
+   "symbol_origin": "라틴어 stibium",
+   "society_name": null
+  },
+  "52": {
+   "mass": 127.6,
+   "mass_estimated": false,
+   "density": 6.24,
+   "density_unit": "g/cm³",
+   "melting_c": 449.51,
+   "boiling_c": 988,
+   "electronegativity": 2.1,
+   "state": "고체",
+   "discovered": {
+    "year": 1782,
+    "ancient": false,
+    "by": "프란츠요제프 뮐러"
+   },
+   "zh": "碲",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "53": {
+   "mass": 126.9,
+   "mass_estimated": false,
+   "density": 4.933,
+   "density_unit": "g/cm³",
+   "melting_c": 113.7,
+   "boiling_c": 184.3,
+   "electronegativity": 2.66,
+   "state": "고체",
+   "discovered": {
+    "year": 1811,
+    "ancient": false,
+    "by": "베르나르 쿠르투아"
+   },
+   "zh": "碘",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "54": {
+   "mass": 131.29,
+   "mass_estimated": false,
+   "density": 5.894,
+   "density_unit": "g/L",
+   "melting_c": -111.75,
+   "boiling_c": -108.1,
+   "electronegativity": 2.6,
+   "state": "기체",
+   "discovered": {
+    "year": 1898,
+    "ancient": false,
+    "by": "윌리엄 램지, 모리스 트래버스"
+   },
+   "zh": "氙",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "55": {
+   "mass": 132.91,
+   "mass_estimated": false,
+   "density": 1.93,
+   "density_unit": "g/cm³",
+   "melting_c": 28.44,
+   "boiling_c": 671,
+   "electronegativity": 0.79,
+   "state": "고체",
+   "discovered": {
+    "year": 1860,
+    "ancient": false,
+    "by": "로베르트 분젠, 구스타프 키르히호프"
+   },
+   "zh": "銫",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "56": {
+   "mass": 137.33,
+   "mass_estimated": false,
+   "density": 3.51,
+   "density_unit": "g/cm³",
+   "melting_c": 727,
+   "boiling_c": 1845,
+   "electronegativity": 0.89,
+   "state": "고체",
+   "discovered": {
+    "year": 1808,
+    "ancient": false,
+    "by": "험프리 데이비"
+   },
+   "zh": "鋇",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "57": {
+   "mass": 138.91,
+   "mass_estimated": false,
+   "density": 6.162,
+   "density_unit": "g/cm³",
+   "melting_c": 920,
+   "boiling_c": 3464,
+   "electronegativity": 1.1,
+   "state": "고체",
+   "discovered": {
+    "year": 1839,
+    "ancient": false,
+    "by": "칼 구스타프 모산데르"
+   },
+   "zh": "鑭",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "58": {
+   "mass": 140.12,
+   "mass_estimated": false,
+   "density": 6.77,
+   "density_unit": "g/cm³",
+   "melting_c": 795,
+   "boiling_c": 3443,
+   "electronegativity": 1.12,
+   "state": "고체",
+   "discovered": {
+    "year": 1803,
+    "ancient": false,
+    "by": "베르셀리우스, 히싱어, 클라프로트"
+   },
+   "zh": "鈰",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "59": {
+   "mass": 140.91,
+   "mass_estimated": false,
+   "density": 6.77,
+   "density_unit": "g/cm³",
+   "melting_c": 935,
+   "boiling_c": 3520,
+   "electronegativity": 1.13,
+   "state": "고체",
+   "discovered": {
+    "year": 1885,
+    "ancient": false,
+    "by": "카를 아우어 폰 벨스바흐"
+   },
+   "zh": "鐠",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "60": {
+   "mass": 144.24,
+   "mass_estimated": false,
+   "density": 7.01,
+   "density_unit": "g/cm³",
+   "melting_c": 1024,
+   "boiling_c": 3074,
+   "electronegativity": 1.14,
+   "state": "고체",
+   "discovered": {
+    "year": 1885,
+    "ancient": false,
+    "by": "카를 아우어 폰 벨스바흐"
+   },
+   "zh": "釹",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "61": {
+   "mass": 145,
+   "mass_estimated": true,
+   "density": 7.26,
+   "density_unit": "g/cm³",
+   "melting_c": 1042,
+   "boiling_c": 3000,
+   "electronegativity": null,
+   "state": "고체",
+   "discovered": {
+    "year": 1945,
+    "ancient": false,
+    "by": "마린스키, 글렌데닌, 코리엘"
+   },
+   "zh": "鉕",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "62": {
+   "mass": 150.36,
+   "mass_estimated": false,
+   "density": 7.52,
+   "density_unit": "g/cm³",
+   "melting_c": 1072,
+   "boiling_c": 1794,
+   "electronegativity": 1.17,
+   "state": "고체",
+   "discovered": {
+    "year": 1879,
+    "ancient": false,
+    "by": "르코크 드 부아보드랑"
+   },
+   "zh": "釤",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "63": {
+   "mass": 151.96,
+   "mass_estimated": false,
+   "density": 5.264,
+   "density_unit": "g/cm³",
+   "melting_c": 826,
+   "boiling_c": 1529,
+   "electronegativity": null,
+   "state": "고체",
+   "discovered": {
+    "year": 1901,
+    "ancient": false,
+    "by": "외젠 드마르세"
+   },
+   "zh": "銪",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "64": {
+   "mass": 157.25,
+   "mass_estimated": false,
+   "density": 7.9,
+   "density_unit": "g/cm³",
+   "melting_c": 1312,
+   "boiling_c": 3273,
+   "electronegativity": 1.2,
+   "state": "고체",
+   "discovered": {
+    "year": 1880,
+    "ancient": false,
+    "by": "장 샤를 갈리사르 드 마리냐크"
+   },
+   "zh": "釓",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "65": {
+   "mass": 158.93,
+   "mass_estimated": false,
+   "density": 8.23,
+   "density_unit": "g/cm³",
+   "melting_c": 1356,
+   "boiling_c": 3230,
+   "electronegativity": null,
+   "state": "고체",
+   "discovered": {
+    "year": 1843,
+    "ancient": false,
+    "by": "칼 구스타프 모산데르"
+   },
+   "zh": "鋱",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "66": {
+   "mass": 162.5,
+   "mass_estimated": false,
+   "density": 8.54,
+   "density_unit": "g/cm³",
+   "melting_c": 1407,
+   "boiling_c": 2567,
+   "electronegativity": 1.22,
+   "state": "고체",
+   "discovered": {
+    "year": 1886,
+    "ancient": false,
+    "by": "르코크 드 부아보드랑"
+   },
+   "zh": "鏑",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "67": {
+   "mass": 164.93,
+   "mass_estimated": false,
+   "density": 8.79,
+   "density_unit": "g/cm³",
+   "melting_c": 1461,
+   "boiling_c": 2720,
+   "electronegativity": 1.23,
+   "state": "고체",
+   "discovered": {
+    "year": 1878,
+    "ancient": false,
+    "by": "마르크 들라퐁텐, 자크루이 소레"
+   },
+   "zh": "鈥",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "68": {
+   "mass": 167.26,
+   "mass_estimated": false,
+   "density": 9.066,
+   "density_unit": "g/cm³",
+   "melting_c": 1529,
+   "boiling_c": 2868,
+   "electronegativity": 1.24,
+   "state": "고체",
+   "discovered": {
+    "year": 1843,
+    "ancient": false,
+    "by": "칼 구스타프 모산데르"
+   },
+   "zh": "鉺",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "69": {
+   "mass": 168.93,
+   "mass_estimated": false,
+   "density": 9.32,
+   "density_unit": "g/cm³",
+   "melting_c": 1545,
+   "boiling_c": 1950,
+   "electronegativity": 1.25,
+   "state": "고체",
+   "discovered": {
+    "year": 1879,
+    "ancient": false,
+    "by": "페르 테오도르 클레베"
+   },
+   "zh": "銩",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "70": {
+   "mass": 173.05,
+   "mass_estimated": false,
+   "density": 6.9,
+   "density_unit": "g/cm³",
+   "melting_c": 824,
+   "boiling_c": 1196,
+   "electronegativity": null,
+   "state": "고체",
+   "discovered": {
+    "year": 1878,
+    "ancient": false,
+    "by": "장 샤를 갈리사르 드 마리냐크"
+   },
+   "zh": "鐿",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "71": {
+   "mass": 174.97,
+   "mass_estimated": false,
+   "density": 9.841,
+   "density_unit": "g/cm³",
+   "melting_c": 1652,
+   "boiling_c": 3402,
+   "electronegativity": 1.27,
+   "state": "고체",
+   "discovered": {
+    "year": 1907,
+    "ancient": false,
+    "by": "조르주 위르뱅"
+   },
+   "zh": "鎦",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "72": {
+   "mass": 178.49,
+   "mass_estimated": false,
+   "density": 13.31,
+   "density_unit": "g/cm³",
+   "melting_c": 2233,
+   "boiling_c": 4603,
+   "electronegativity": 1.3,
+   "state": "고체",
+   "discovered": {
+    "year": 1923,
+    "ancient": false,
+    "by": "디르크 코스터, 게오르크 드 헤베시"
+   },
+   "zh": "鉿",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "73": {
+   "mass": 180.95,
+   "mass_estimated": false,
+   "density": 16.69,
+   "density_unit": "g/cm³",
+   "melting_c": 3017,
+   "boiling_c": 5458,
+   "electronegativity": 1.5,
+   "state": "고체",
+   "discovered": {
+    "year": 1802,
+    "ancient": false,
+    "by": "안데르스 구스타프 에셰베리"
+   },
+   "zh": "鉭",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "74": {
+   "mass": 183.84,
+   "mass_estimated": false,
+   "density": 19.25,
+   "density_unit": "g/cm³",
+   "melting_c": 3422,
+   "boiling_c": 5555,
+   "electronegativity": 2.36,
+   "state": "고체",
+   "discovered": {
+    "year": 1783,
+    "ancient": false,
+    "by": "엘우야르 형제"
+   },
+   "zh": "鎢",
+   "hanja": null,
+   "symbol_origin": "독일어 Wolfram",
+   "society_name": null
+  },
+  "75": {
+   "mass": 186.21,
+   "mass_estimated": false,
+   "density": 21.02,
+   "density_unit": "g/cm³",
+   "melting_c": 3186,
+   "boiling_c": 5596,
+   "electronegativity": 1.9,
+   "state": "고체",
+   "discovered": {
+    "year": 1925,
+    "ancient": false,
+    "by": "노다크, 타케, 베르크"
+   },
+   "zh": "錸",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "76": {
+   "mass": 190.23,
+   "mass_estimated": false,
+   "density": 22.59,
+   "density_unit": "g/cm³",
+   "melting_c": 3033,
+   "boiling_c": 5012,
+   "electronegativity": 2.2,
+   "state": "고체",
+   "discovered": {
+    "year": 1803,
+    "ancient": false,
+    "by": "스미스슨 테넌트"
+   },
+   "zh": "鋨",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "77": {
+   "mass": 192.22,
+   "mass_estimated": false,
+   "density": 22.56,
+   "density_unit": "g/cm³",
+   "melting_c": 2446,
+   "boiling_c": 4428,
+   "electronegativity": 2.2,
+   "state": "고체",
+   "discovered": {
+    "year": 1803,
+    "ancient": false,
+    "by": "스미스슨 테넌트"
+   },
+   "zh": "銥",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "78": {
+   "mass": 195.08,
+   "mass_estimated": false,
+   "density": 21.45,
+   "density_unit": "g/cm³",
+   "melting_c": 1768.3,
+   "boiling_c": 3825,
+   "electronegativity": 2.28,
+   "state": "고체",
+   "discovered": {
+    "year": 1748,
+    "ancient": false,
+    "by": "안토니오 데 우요아"
+   },
+   "zh": "鉑",
+   "hanja": "白金",
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "79": {
+   "mass": 196.97,
+   "mass_estimated": false,
+   "density": 19.3,
+   "density_unit": "g/cm³",
+   "melting_c": 1064.18,
+   "boiling_c": 2856,
+   "electronegativity": 2.54,
+   "state": "고체",
+   "discovered": {
+    "year": null,
+    "ancient": true,
+    "by": "고대부터 알려짐"
+   },
+   "zh": "金",
+   "hanja": "金",
+   "symbol_origin": "라틴어 aurum",
+   "society_name": null
+  },
+  "80": {
+   "mass": 200.59,
+   "mass_estimated": false,
+   "density": 13.534,
+   "density_unit": "g/cm³",
+   "melting_c": -38.83,
+   "boiling_c": 356.73,
+   "electronegativity": 2,
+   "state": "액체",
+   "discovered": {
+    "year": null,
+    "ancient": true,
+    "by": "고대부터 알려짐"
+   },
+   "zh": "汞",
+   "hanja": "水銀",
+   "symbol_origin": "라틴어 hydrargyrum",
+   "society_name": null
+  },
+  "81": {
+   "mass": 204.38,
+   "mass_estimated": false,
+   "density": 11.85,
+   "density_unit": "g/cm³",
+   "melting_c": 304,
+   "boiling_c": 1473,
+   "electronegativity": 1.62,
+   "state": "고체",
+   "discovered": {
+    "year": 1861,
+    "ancient": false,
+    "by": "윌리엄 크룩스"
+   },
+   "zh": "鉈",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "82": {
+   "mass": 207.2,
+   "mass_estimated": false,
+   "density": 11.34,
+   "density_unit": "g/cm³",
+   "melting_c": 327.46,
+   "boiling_c": 1749,
+   "electronegativity": 2.33,
+   "state": "고체",
+   "discovered": {
+    "year": null,
+    "ancient": true,
+    "by": "고대부터 알려짐"
+   },
+   "zh": "鉛",
+   "hanja": "鉛",
+   "symbol_origin": "라틴어 plumbum",
+   "society_name": null
+  },
+  "83": {
+   "mass": 208.98,
+   "mass_estimated": false,
+   "density": 9.78,
+   "density_unit": "g/cm³",
+   "melting_c": 271.3,
+   "boiling_c": 1564,
+   "electronegativity": 2.02,
+   "state": "고체",
+   "discovered": {
+    "year": 1753,
+    "ancient": false,
+    "by": "클로드 프랑수아 조프루아"
+   },
+   "zh": "鉍",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "84": {
+   "mass": 209,
+   "mass_estimated": true,
+   "density": 9.196,
+   "density_unit": "g/cm³",
+   "melting_c": 254,
+   "boiling_c": 962,
+   "electronegativity": 2,
+   "state": "고체",
+   "discovered": {
+    "year": 1898,
+    "ancient": false,
+    "by": "마리 퀴리, 피에르 퀴리"
+   },
+   "zh": "釙",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "85": {
+   "mass": 210,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": 302,
+   "boiling_c": null,
+   "electronegativity": 2.2,
+   "state": "고체",
+   "discovered": {
+    "year": 1940,
+    "ancient": false,
+    "by": "코슨, 매켄지, 세그레"
+   },
+   "zh": "砈",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "86": {
+   "mass": 222,
+   "mass_estimated": true,
+   "density": 9.73,
+   "density_unit": "g/L",
+   "melting_c": -71,
+   "boiling_c": -61.7,
+   "electronegativity": 2.2,
+   "state": "기체",
+   "discovered": {
+    "year": 1900,
+    "ancient": false,
+    "by": "프리드리히 에른스트 도른"
+   },
+   "zh": "氡",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "87": {
+   "mass": 223,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": 0.7,
+   "state": "고체",
+   "discovered": {
+    "year": 1939,
+    "ancient": false,
+    "by": "마르그리트 페레"
+   },
+   "zh": "鍅",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "88": {
+   "mass": 226,
+   "mass_estimated": true,
+   "density": 5.5,
+   "density_unit": "g/cm³",
+   "melting_c": 700,
+   "boiling_c": 1737,
+   "electronegativity": 0.9,
+   "state": "고체",
+   "discovered": {
+    "year": 1898,
+    "ancient": false,
+    "by": "마리 퀴리, 피에르 퀴리"
+   },
+   "zh": "鐳",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "89": {
+   "mass": 227,
+   "mass_estimated": true,
+   "density": 10.07,
+   "density_unit": "g/cm³",
+   "melting_c": 1050,
+   "boiling_c": 3198,
+   "electronegativity": 1.1,
+   "state": "고체",
+   "discovered": {
+    "year": 1899,
+    "ancient": false,
+    "by": "앙드레루이 드비에른"
+   },
+   "zh": "錒",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "90": {
+   "mass": 232.04,
+   "mass_estimated": true,
+   "density": 11.72,
+   "density_unit": "g/cm³",
+   "melting_c": 1750,
+   "boiling_c": 4788,
+   "electronegativity": 1.3,
+   "state": "고체",
+   "discovered": {
+    "year": 1829,
+    "ancient": false,
+    "by": "옌스 야코브 베르셀리우스"
+   },
+   "zh": "釷",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "91": {
+   "mass": 231.04,
+   "mass_estimated": true,
+   "density": 15.37,
+   "density_unit": "g/cm³",
+   "melting_c": 1572,
+   "boiling_c": null,
+   "electronegativity": 1.5,
+   "state": "고체",
+   "discovered": {
+    "year": 1913,
+    "ancient": false,
+    "by": "카지미에시 파얀스, 오스발트 괴링"
+   },
+   "zh": "鏷",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "92": {
+   "mass": 238.03,
+   "mass_estimated": true,
+   "density": 19.1,
+   "density_unit": "g/cm³",
+   "melting_c": 1132.2,
+   "boiling_c": 4131,
+   "electronegativity": 1.38,
+   "state": "고체",
+   "discovered": {
+    "year": 1789,
+    "ancient": false,
+    "by": "마르틴 하인리히 클라프로트"
+   },
+   "zh": "鈾",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "93": {
+   "mass": 237,
+   "mass_estimated": true,
+   "density": 20.45,
+   "density_unit": "g/cm³",
+   "melting_c": 644,
+   "boiling_c": null,
+   "electronegativity": 1.36,
+   "state": "고체",
+   "discovered": {
+    "year": 1940,
+    "ancient": false,
+    "by": "에드윈 맥밀런, 필립 에이벌슨"
+   },
+   "zh": "錼",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "94": {
+   "mass": 244,
+   "mass_estimated": true,
+   "density": 19.84,
+   "density_unit": "g/cm³",
+   "melting_c": 639.4,
+   "boiling_c": 3228,
+   "electronegativity": 1.28,
+   "state": "고체",
+   "discovered": {
+    "year": 1940,
+    "ancient": false,
+    "by": "글렌 시보그 연구진"
+   },
+   "zh": "鈽",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "95": {
+   "mass": 243,
+   "mass_estimated": true,
+   "density": 12,
+   "density_unit": "g/cm³",
+   "melting_c": 1176,
+   "boiling_c": null,
+   "electronegativity": 1.13,
+   "state": "고체",
+   "discovered": {
+    "year": 1944,
+    "ancient": false,
+    "by": "글렌 시보그 연구진"
+   },
+   "zh": "鋂",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "96": {
+   "mass": 247,
+   "mass_estimated": true,
+   "density": 13.51,
+   "density_unit": "g/cm³",
+   "melting_c": 1340,
+   "boiling_c": 3110,
+   "electronegativity": 1.28,
+   "state": "고체",
+   "discovered": {
+    "year": 1944,
+    "ancient": false,
+    "by": "글렌 시보그 연구진"
+   },
+   "zh": "鋦",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "97": {
+   "mass": 247,
+   "mass_estimated": true,
+   "density": 14.78,
+   "density_unit": "g/cm³",
+   "melting_c": 986,
+   "boiling_c": null,
+   "electronegativity": 1.3,
+   "state": "고체",
+   "discovered": {
+    "year": 1949,
+    "ancient": false,
+    "by": "글렌 시보그 연구진"
+   },
+   "zh": "鉳",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "98": {
+   "mass": 251,
+   "mass_estimated": true,
+   "density": 15.1,
+   "density_unit": "g/cm³",
+   "melting_c": 900,
+   "boiling_c": null,
+   "electronegativity": 1.3,
+   "state": "고체",
+   "discovered": {
+    "year": 1950,
+    "ancient": false,
+    "by": "글렌 시보그 연구진"
+   },
+   "zh": "鉲",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "99": {
+   "mass": 252,
+   "mass_estimated": true,
+   "density": 8.84,
+   "density_unit": "g/cm³",
+   "melting_c": 860,
+   "boiling_c": null,
+   "electronegativity": 1.3,
+   "state": "고체",
+   "discovered": {
+    "year": 1952,
+    "ancient": false,
+    "by": "미국 수소 폭탄 실험 잔해에서"
+   },
+   "zh": "鑀",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "100": {
+   "mass": 257,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": 1.3,
+   "state": null,
+   "discovered": {
+    "year": 1952,
+    "ancient": false,
+    "by": "미국 수소 폭탄 실험 잔해에서"
+   },
+   "zh": "鐨",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "101": {
+   "mass": 258,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": 1.3,
+   "state": null,
+   "discovered": {
+    "year": 1955,
+    "ancient": false,
+    "by": "글렌 시보그 연구진"
+   },
+   "zh": "鍆",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "102": {
+   "mass": 259,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": 1.3,
+   "state": null,
+   "discovered": {
+    "year": 1958,
+    "ancient": false,
+    "by": "앨버트 기오르소 연구진"
+   },
+   "zh": "鍩",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "103": {
+   "mass": 266,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1961,
+    "ancient": false,
+    "by": "앨버트 기오르소 연구진"
+   },
+   "zh": "鐒",
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "104": {
+   "mass": 267,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1964,
+    "ancient": false,
+    "by": "두브나(러시아)·버클리(미국) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "105": {
+   "mass": 268,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1968,
+    "ancient": false,
+    "by": "두브나(러시아)·버클리(미국) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "106": {
+   "mass": 269,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1974,
+    "ancient": false,
+    "by": "버클리(미국) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "107": {
+   "mass": 270,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1981,
+    "ancient": false,
+    "by": "다름슈타트 GSI(독일) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "108": {
+   "mass": 269,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1984,
+    "ancient": false,
+    "by": "다름슈타트 GSI(독일) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "109": {
+   "mass": 278,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1982,
+    "ancient": false,
+    "by": "다름슈타트 GSI(독일) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "110": {
+   "mass": 281,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1994,
+    "ancient": false,
+    "by": "다름슈타트 GSI(독일) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "111": {
+   "mass": 282,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1994,
+    "ancient": false,
+    "by": "다름슈타트 GSI(독일) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "112": {
+   "mass": 285,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1996,
+    "ancient": false,
+    "by": "다름슈타트 GSI(독일) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "113": {
+   "mass": 286,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 2004,
+    "ancient": false,
+    "by": "리켄(일본) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "114": {
+   "mass": 289,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 1999,
+    "ancient": false,
+    "by": "두브나(러시아) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "115": {
+   "mass": 290,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 2003,
+    "ancient": false,
+    "by": "두브나(러시아) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "116": {
+   "mass": 293,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 2000,
+    "ancient": false,
+    "by": "두브나(러시아) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "117": {
+   "mass": 294,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 2010,
+    "ancient": false,
+    "by": "두브나(러시아)·오크리지(미국) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  },
+  "118": {
+   "mass": 294,
+   "mass_estimated": true,
+   "density": null,
+   "density_unit": "g/cm³",
+   "melting_c": null,
+   "boiling_c": null,
+   "electronegativity": null,
+   "state": null,
+   "discovered": {
+    "year": 2002,
+    "ancient": false,
+    "by": "두브나(러시아) 연구진"
+   },
+   "zh": null,
+   "hanja": null,
+   "symbol_origin": null,
+   "society_name": null
+  }
+ }
+}

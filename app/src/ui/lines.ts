@@ -10,12 +10,12 @@ const levelDots = (n: number) => n < 1 ? '' : `<span class="level" aria-label="�
 
 /**
  * 모드 카드 그림: 작은 원소 칸에서 어느 칸이 빈칸인지 (design.md 6-1-b).
- * '_X' = 빈칸, 그 안에 X가 채워지는 모습을 반복해서 보여 준다 (어떻게 푸는지).
- * d = 채워지는 순서 (혼합·완전 혼합은 칸이 차례로 채워진다)
+ * '_X' = 빈칸. 창이 열려 있는 동안 X를 실제로 치는 것처럼 써 보인다 (startTyping).
+ * d = 치는 순서 (혼합·완전 혼합은 칸을 차례로 친다)
  */
 function modePic(id: string) {
   const slot = (v: string, d: number, cls: string, ghost = false) =>
-    `<span class="blank ${cls}" style="--d:${d * 0.7}s">${ghost ? `<span class="ghostt">${v}</span>` : ''}<span class="fill">${v}</span></span>`;
+    `<span class="blank ${cls}${ghost ? ' trace' : ''}" data-type="${v}" data-d="${d}">${ghost ? `<span class="ghostt">${v}</span>` : ''}<span class="fill"></span></span>`;
   const mini = (n: string, s: string, k: string, d = 0, ghost = false) => `<span class="mini"><span class="caption sub">${n}</span>`
     + (s.startsWith('_') ? slot(s.slice(1), d, 'big') : `<b>${s}</b>`)
     + `<span class="caption">${k.startsWith('_') ? slot(k.slice(1), d, 'name', ghost) : k}</span></span>`;
@@ -25,6 +25,50 @@ function modePic(id: string) {
   if (id === 'number') return mini('9', '_F', '?');
   if (id === 'mixed') return `<span class="minis">${mini('9', '_F', '플루오린', 0)}${mini('17', 'Cl', '_염소', 1)}</span>`;
   return `<span class="minis">${mini('9', '_F', '?', 0)}${mini('17', 'Cl', '_염소', 1)}${mini('35', '_Br', '브로민', 2)}</span>`;
+}
+
+/** 두벌식으로 칠 때 화면에 보이는 순서: 플 → ㅍ, 프, 플 */
+const CHO = 'ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ';
+export function typingSteps(word: string): string[] {
+  const out: string[] = [];
+  let done = '';
+  for (const ch of word) {
+    const c = ch.charCodeAt(0) - 0xac00;
+    if (c >= 0 && c <= 11171) {
+      const cho = Math.floor(c / 588), jung = Math.floor((c % 588) / 28);
+      out.push(done + CHO[cho], done + String.fromCharCode(0xac00 + cho * 588 + jung * 28));
+      if (c % 28) out.push(done + ch);
+    } else out.push(done + ch);
+    done += ch;
+  }
+  return out;
+}
+
+/** 카드마다 빈칸을 한 글자씩 쳐 보이고, 잠깐 멈췄다가 지우고 다시. 멈추는 함수를 돌려준다. */
+function startTyping(root: HTMLElement): () => void {
+  const cards = [...root.querySelectorAll<HTMLElement>('.mode')];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const plans = cards.map((card) => {
+    const blanks = [...card.querySelectorAll<HTMLElement>('[data-type]')].sort((a, b) => Number(a.dataset.d) - Number(b.dataset.d));
+    let t = 5; // 창이 뜨고 조금 뒤에 시작
+    const items = blanks.map((el) => { const steps = typingSteps(el.dataset.type!); const it = { el, fill: el.querySelector<HTMLElement>('.fill')!, steps, start: t }; t += steps.length + 4; return it; });
+    return { items, cycle: t + 14 }; // 다 치고 1.5초쯤 보여 준 뒤 지운다
+  });
+  if (reduce) { plans.forEach((p) => p.items.forEach((it) => { it.fill.textContent = it.el.dataset.type!; })); return () => {}; }
+  let tick = 0;
+  const id = window.setInterval(() => {
+    tick++;
+    for (const p of plans) {
+      const t = tick % p.cycle;
+      for (const it of p.items) {
+        const k = t - it.start;
+        const typing = k >= 0 && k < it.steps.length;
+        it.fill.textContent = t >= p.cycle - 3 || k < 0 ? '' : typing ? it.steps[k] : it.el.dataset.type!;
+        it.el.classList.toggle('typing', typing || (k >= -2 && k < 0));
+      }
+    }
+  }, 110);
+  return () => clearInterval(id);
 }
 
 function ticket(l: Line) {
@@ -38,6 +82,17 @@ function ticket(l: Line) {
   </button>`;
 }
 
+/**
+ * Element_Metro 둘러보기 탭: 족·구간 노선 | 주기선 | 주기율표 학습 (운영자 요청).
+ * 노선 묶음은 같은 화면에서 바뀌고, 주기율표 학습은 /element/table 로 간다.
+ */
+export function serviceTabs(groups: Array<{ id: string; label: string }>, active: string) {
+  return `<nav class="seg" aria-label="Element_Metro 둘러보기">${groups.map((g) => active === 'table'
+    ? `<a href="/element?tab=${g.id}" data-link>${esc(g.label)}</a>`
+    : `<button data-tab="${g.id}" aria-pressed="${g.id === active}">${esc(g.label)}</button>`).join('')}`
+    + `<a href="/element/table" data-link ${active === 'table' ? 'aria-current="page"' : ''}>${icon.grid} 주기율표 학습</a></nav>`;
+}
+
 export function renderLines(main: HTMLElement, openLine?: string, preview = false) {
   const svc = services[0];
   const all = visibleLines(svc.id, preview);
@@ -45,11 +100,12 @@ export function renderLines(main: HTMLElement, openLine?: string, preview = fals
     { id: 'zone', label: '족·구간 노선' },
     { id: 'period', label: '주기선' },
   ].map((g) => ({ ...g, lines: all.filter((l) => l.group === g.id) })).filter((g) => g.lines.length);
-  let tab = groups.find((g) => g.lines.some((l) => l.id === openLine))?.id ?? groups[0].id;
+  const asked = new URL(location.href).searchParams.get('tab');
+  let tab = groups.find((g) => g.lines.some((l) => l.id === openLine))?.id ?? groups.find((g) => g.id === asked)?.id ?? groups[0].id;
 
   main.innerHTML = `
     <div class="lines-head"><div><div class="caption-strong sub">${esc(svc.name)}</div><h1 class="title-l h1">어느 노선을 탈까요?</h1></div></div>
-    <div class="seg" role="group" aria-label="노선 묶음">${groups.map((g) => `<button data-tab="${g.id}">${g.label} ${g.lines.length}</button>`).join('')}</div>
+    ${serviceTabs(groups.map((g) => ({ id: g.id, label: `${g.label} ${g.lines.length}` })), tab)}
     <div class="tickets" id="tickets"></div>
     <dialog class="sheet" id="modeSheet" aria-labelledby="sheetTitle"></dialog>`;
 
@@ -65,6 +121,7 @@ export function renderLines(main: HTMLElement, openLine?: string, preview = fals
   });
 
   const sheet = main.querySelector<HTMLDialogElement>('#modeSheet')!;
+  let stopTyping: () => void = () => {};
   const openSheet = (l: Line) => {
     let mode = svc.modes.includes(lastMode()) ? lastMode() : svc.modes[0];
     const draw = () => {
@@ -80,22 +137,30 @@ export function renderLines(main: HTMLElement, openLine?: string, preview = fals
             <span class="label">${esc(mm.label)} ${levelDots(mm.level)}</span><span class="caption sub">${esc(mm.desc ?? '')}</span>
             <span class="caption-strong ${b ? '' : 'sub'} num">${b ? recTime(b.duration_ms) : '첫 도전'}</span></button>`;
         }).join('')}</div>
-        <button class="btn primary start" data-start>${esc(l.name)} 출발 · ${esc(m.label)} ${icon.arrow}</button>
+        <button class="btn primary start" data-start><span id="startLabel">${esc(l.name)} 출발 · ${esc(m.label)}</span> ${icon.arrow}</button>
       </div>`;
     };
     draw();
+    stopTyping();
+    stopTyping = startTyping(sheet);
+    // 모드를 고르면 다시 그리지 않고 선택 표시와 출발 버튼만 바꾼다 (타이핑 애니메이션이 이어지게)
+    const select = (id: string) => {
+      mode = id;
+      sheet.querySelectorAll<HTMLElement>('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === id)));
+      sheet.querySelector('#startLabel')!.textContent = `${l.name} 출발 · ${modes.find((x) => x.id === id)!.label}`;
+    };
     sheet.onclick = (e) => {
       const t = e.target as HTMLElement;
       if (t === sheet || t.closest('[data-close]')) { sheet.close(); return; }
       const mb = t.closest<HTMLButtonElement>('[data-mode]');
-      if (mb) { mode = mb.dataset.mode!; draw(); sheet.querySelector<HTMLElement>(`[data-mode="${mode}"]`)?.focus(); return; }
+      if (mb) { select(mb.dataset.mode!); return; }
       if (t.closest('[data-start]')) {
         try { localStorage.setItem(LAST_MODE, mode); } catch { /* 저장 막힘 */ }
         sheet.close();
         navigate(`/element/${l.id}?mode=${mode}${preview ? '&preview=1' : ''}`);
       }
     };
-    sheet.onclose = () => { if (location.pathname !== '/element' && !location.search.includes('mode=')) history.replaceState(null, '', '/element'); };
+    sheet.onclose = () => { stopTyping(); if (location.pathname !== '/element' && !location.search.includes('mode=')) history.replaceState(null, '', '/element'); };
     if (location.pathname !== `/element/${l.id}`) history.pushState(null, '', `/element/${l.id}`);
     sheet.showModal();
     // 처음 열 때만 카드가 차례로 나타난다 (모드를 바꿔 다시 그릴 때는 생략)
@@ -108,5 +173,5 @@ export function renderLines(main: HTMLElement, openLine?: string, preview = fals
   });
   const target = openLine ? all.find((l) => l.id === openLine) : undefined;
   if (target) openSheet(target);
-  return () => { if (sheet.open) sheet.close(); };
+  return () => { stopTyping(); if (sheet.open) sheet.close(); };
 }

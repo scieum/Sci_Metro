@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { matchInstant, matchSubmit } from '../src/engine/matcher';
+import { matchInstant, matchSubmit, strokes } from '../src/engine/matcher';
 import { Run, isBetter, planPrompts } from '../src/engine/run';
 import { elementById, lineById, lineStations, modeById, services, toStation } from '../src/data';
+import { typingSteps } from '../src/ui/lines';
+import { boxes, configuration, shells, subText } from '../src/map/electrons';
 import { checkData } from '../scripts/check-data.mjs';
 import path from 'node:path';
 import fs from 'node:fs';
@@ -130,6 +132,53 @@ describe('번호 쓰기: 역 순서를 섞는다', () => {
   it('섞지 않는 모드는 노선 순서 그대로', () => {
     const src = lineStations(lineById('basic')!);
     expect(new Run(src, modeById('name')!, fields).stations).toBe(src);
+  });
+});
+
+describe('평균 타수', () => {
+  it('두벌식 자모 단위로 센다', () => {
+    expect(strokes('플루오린')).toBe(10); // ㅍㅡㄹ ㄹㅜ ㅇㅗ ㄹㅣㄴ
+    expect(strokes('Fe')).toBe(2);
+    expect(strokes('왜')).toBe(3); // ㅇ + ㅙ(ㅗㅐ)
+    expect(strokes('닭')).toBe(4); // ㄷ ㅏ ㄺ(ㄹㄱ)
+    expect(strokes('빵')).toBe(3); // ㅃ(Shift) ㅏ ㅇ
+    expect(strokes(' a b ')).toBe(2);
+  });
+  it('맞힌 답의 타수 ÷ 걸린 분', () => {
+    let t = 0;
+    const r = new Run(one(9, 10), modeById('name')!, fields, Math.random, () => (t += 30000));
+    r.start(); // t=30s
+    r.submit('플루오린'); // 10타
+    r.submit('넹'); // 오답은 세지 않음
+    r.submit('네온'); // ㄴㅔ ㅇㅗㄴ = 5타, 종착 때 시계를 한 번 더 읽어 t=60s → 30초
+    expect(r.result().cpm).toBe(30); // 15타 ÷ 0.5분
+  });
+});
+
+describe('모드 카드 타이핑 애니메이션', () => {
+  it('한글은 두벌식으로 칠 때처럼 자모가 조합되며 보인다', () => {
+    expect(typingSteps('플루')).toEqual(['ㅍ', '프', '플', '플ㄹ', '플루']);
+    expect(typingSteps('Br')).toEqual(['B', 'Br']);
+    expect(typingSteps('염소').at(-1)).toBe('염소');
+  });
+});
+
+describe('전자 배치 (지도 모듈)', () => {
+  it('쌓음 원리와 예외', () => {
+    const c = (z: number) => { const r = configuration(z); return `${r.core ? `[${r.core}] ` : ''}${subText(r.valence)}`; };
+    expect(c(1)).toBe('1s¹');
+    expect(c(11)).toBe('[Ne] 3s¹');
+    expect(c(26)).toBe('[Ar] 3d⁶ 4s²');
+    expect(c(24)).toBe('[Ar] 3d⁵ 4s¹');
+    expect(c(29)).toBe('[Ar] 3d¹⁰ 4s¹');
+    expect(c(79)).toBe('[Xe] 4f¹⁴ 5d¹⁰ 6s¹');
+    expect(subText(configuration(11).full)).toBe('1s² 2s² 2p⁶ 3s¹');
+  });
+  it('껍질별 전자 수와 오비탈 상자', () => {
+    expect(shells(11)).toEqual([2, 8, 1]);
+    expect(shells(26)).toEqual([2, 8, 14, 2]);
+    expect(shells(118).reduce((a, b) => a + b)).toBe(118);
+    expect(boxes({ n: 2, l: 'p', e: 4 })).toEqual(['↑↓', '↑', '↑']);
   });
 });
 

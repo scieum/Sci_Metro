@@ -43,4 +43,6 @@ export interface RunResult {
   missed_station_ids: Array<number | string>;
   accuracy: number;
   per_minute: number;
+  /** 평균 타수 (타/분) */
+  cpm: number;
 }

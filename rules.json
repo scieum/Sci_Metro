@@ -1,0 +1,190 @@
+{
+  "design": {
+    "bg": "#FFFFFF",
+    "accent": "#3B5BDB",
+    "forbidden_colors": [
+      "#E84B9C",
+      "#F06AAE"
+    ],
+    "fonts_allowed": [
+      "Pretendard"
+    ],
+    "frames": {
+      "mobile": [
+        390,
+        844
+      ],
+      "tablet": [
+        1194,
+        834
+      ],
+      "desktop": [
+        1440,
+        1024
+      ]
+    },
+    "keyscreens": [
+      "플레이",
+      "결과",
+      "노선 선택"
+    ],
+    "min_modes": 2,
+    "line_color_count": 16,
+    "font_sizes": [
+      12,
+      14,
+      16,
+      18,
+      20,
+      24,
+      32,
+      48
+    ],
+    "radii": [
+      0,
+      8,
+      12,
+      999
+    ]
+  },
+  "research": {
+    "min_uibowl_refs": 5,
+    "required_screens": [
+      "홈",
+      "노선 선택",
+      "플레이",
+      "결과",
+      "내 기록"
+    ]
+  },
+  "naming": {
+    "authority": "대한화학회",
+    "station_count": 118,
+    "names": {
+      "9": {
+        "official": "플루오린",
+        "aliases": [
+          "불소"
+        ]
+      },
+      "11": {
+        "official": "나트륨",
+        "aliases": [
+          "소듐"
+        ],
+        "note": "운영자 예외 — 대한화학회 표기는 aliases 쪽, official은 앱 표기"
+      },
+      "14": {
+        "official": "규소",
+        "aliases": [
+          "실리콘"
+        ]
+      },
+      "19": {
+        "official": "칼륨",
+        "aliases": [
+          "포타슘"
+        ],
+        "note": "운영자 예외 — 대한화학회 표기는 aliases 쪽, official은 앱 표기"
+      },
+      "22": {
+        "official": "타이타늄",
+        "aliases": [
+          "티타늄"
+        ]
+      },
+      "24": {
+        "official": "크로뮴",
+        "aliases": [
+          "크롬"
+        ]
+      },
+      "25": {
+        "official": "망가니즈",
+        "aliases": [
+          "망간"
+        ]
+      },
+      "35": {
+        "official": "브로민",
+        "aliases": [
+          "브롬"
+        ]
+      },
+      "41": {
+        "official": "나이오븀",
+        "aliases": [
+          "니오븀"
+        ]
+      },
+      "42": {
+        "official": "몰리브데넘",
+        "aliases": [
+          "몰리브덴"
+        ]
+      },
+      "53": {
+        "official": "아이오딘",
+        "aliases": [
+          "요오드"
+        ]
+      },
+      "54": {
+        "official": "제논",
+        "aliases": [
+          "크세논"
+        ]
+      },
+      "57": {
+        "official": "란타넘",
+        "aliases": [
+          "란탄"
+        ]
+      }
+    }
+  },
+  "privacy": {
+    "forbidden_in_src": [
+      "type=\"email\"",
+      "type=\"password\"",
+      "document.cookie",
+      "login",
+      "open.neis.go.kr",
+      "NEIS_API_KEY",
+      "service_role"
+    ],
+    "network_allowed": [
+      "@vercel/analytics",
+      "@supabase/supabase-js",
+      "/functions/v1/school-search"
+    ],
+    "server_fields_allowed": [
+      "line_id",
+      "mode_id",
+      "duration_ms",
+      "first_try_correct",
+      "total_stations",
+      "school_code",
+      "school_name",
+      "nickname",
+      "week",
+      "created_at"
+    ],
+    "nickname": {
+      "min": 2,
+      "max": 10,
+      "pattern": "^[가-힣A-Za-z0-9]+$"
+    }
+  },
+  "engine": {
+    "dir": "app/src/engine",
+    "forbidden_words": [
+      "원소",
+      "element",
+      "symbol",
+      "periodic",
+      "주기율"
+    ]
+  },
+  "retry_limit": 3
+}

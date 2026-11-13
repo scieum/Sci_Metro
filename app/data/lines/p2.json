@@ -1,0 +1,25 @@
+{
+  "id": "p2",
+  "service_id": "element",
+  "name": "2주기선",
+  "subtitle": "Li–Ne",
+  "color": "line-p2",
+  "description": "전자 껍질 두 개, 리튬부터 네온까지",
+  "station_ids": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "group": "period",
+  "curriculum": [
+    "통합과학"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 10
+}

@@ -1,0 +1,37 @@
+{
+  "id": "tm-all",
+  "service_id": "element",
+  "name": "전이금속 통합선",
+  "subtitle": "Sc–Zn · Y–Cd",
+  "color": "line-tm-all",
+  "description": "1호선과 2호선을 이어 달리는 20역",
+  "station_ids": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ],
+  "group": "zone",
+  "curriculum": [
+    "화학"
+  ],
+  "level": 3,
+  "status": "open",
+  "order": 4
+}

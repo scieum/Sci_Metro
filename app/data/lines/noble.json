@@ -1,0 +1,25 @@
+{
+  "id": "noble",
+  "service_id": "element",
+  "name": "비활성 기체선",
+  "subtitle": "18족 He–Og",
+  "color": "line-noble",
+  "description": "반응을 잘 하지 않는 조용한 노선",
+  "station_ids": [
+    2,
+    10,
+    18,
+    36,
+    54,
+    86,
+    118
+  ],
+  "group": "zone",
+  "curriculum": [
+    "통합과학",
+    "화학"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 9
+}

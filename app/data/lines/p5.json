@@ -1,0 +1,35 @@
+{
+  "id": "p5",
+  "service_id": "element",
+  "name": "5주기선",
+  "subtitle": "Rb–Xe",
+  "color": "line-p5",
+  "description": "루비듐부터 제논까지 18역",
+  "station_ids": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "group": "period",
+  "curriculum": [
+    "화학"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 13
+}

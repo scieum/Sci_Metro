@@ -1,0 +1,24 @@
+{
+  "id": "halogen",
+  "service_id": "element",
+  "name": "할로젠선",
+  "subtitle": "17족 F–Ts",
+  "color": "line-halogen",
+  "description": "위 역일수록 반응성이 큼",
+  "station_ids": [
+    9,
+    17,
+    35,
+    53,
+    85,
+    117
+  ],
+  "group": "zone",
+  "curriculum": [
+    "통합과학",
+    "화학"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 8
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "practice",
+    "label": "연습",
+    "level": 0,
+    "desc": "연한 이름을 따라 써요 · Enter",
+    "prompts": ["symbol"],
+    "answers": { "symbol": ["name"] },
+    "ghost": true
+  },
+  {
+    "id": "name",
+    "label": "이름 쓰기",
+    "level": 1,
+    "desc": "기호를 보고 이름 · Enter",
+    "prompts": ["symbol"],
+    "answers": { "symbol": ["name"] }
+  },
+  {
+    "id": "symbol",
+    "label": "기호 쓰기",
+    "level": 1,
+    "desc": "이름을 보고 기호 · Enter",
+    "prompts": ["name"],
+    "answers": { "name": ["symbol"] }
+  },
+  {
+    "id": "number",
+    "label": "번호 쓰기",
+    "level": 2,
+    "desc": "번호를 보고 기호 · 역 순서가 섞여 나와요",
+    "prompts": ["number"],
+    "answers": { "number": ["symbol"] },
+    "shuffle": true
+  },
+  {
+    "id": "mixed",
+    "label": "혼합",
+    "level": 2,
+    "desc": "이름 ↔ 기호가 섞여 나와요",
+    "prompts": ["name", "symbol"],
+    "answers": { "name": ["symbol"], "symbol": ["name"] },
+    "max_run": 3
+  },
+  {
+    "id": "master",
+    "label": "완전 혼합",
+    "level": 3,
+    "desc": "이름 · 기호 · 번호가 섞여 나와요",
+    "prompts": ["name", "symbol", "number"],
+    "answers": { "name": ["symbol"], "symbol": ["name"], "number": ["symbol", "name"] },
+    "max_run": 3
+  }
+]

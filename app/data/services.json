@@ -1,0 +1,34 @@
+[
+  {
+    "id": "element",
+    "name": "Element_Metro",
+    "subject": "chemistry",
+    "status": "open",
+    "map_module": "periodic_table",
+    "default_line": "basic",
+    "order": 1,
+    "fields": {
+      "number": {
+        "label": "원자번호"
+      },
+      "symbol": {
+        "label": "기호",
+        "matcher": "latin_ci",
+        "input": "submit"
+      },
+      "name": {
+        "label": "이름",
+        "matcher": "ko_text",
+        "input": "submit"
+      }
+    },
+    "modes": [
+      "practice",
+      "name",
+      "symbol",
+      "number",
+      "mixed",
+      "master"
+    ]
+  }
+]

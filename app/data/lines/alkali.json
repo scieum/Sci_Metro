@@ -1,0 +1,24 @@
+{
+  "id": "alkali",
+  "service_id": "element",
+  "name": "알칼리 금속선",
+  "subtitle": "1족 Li–Fr",
+  "color": "line-alkali",
+  "description": "아래 역일수록 반응성이 큼",
+  "station_ids": [
+    3,
+    11,
+    19,
+    37,
+    55,
+    87
+  ],
+  "group": "zone",
+  "curriculum": [
+    "통합과학",
+    "화학"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 7
+}

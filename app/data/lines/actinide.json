@@ -1,0 +1,33 @@
+{
+  "id": "actinide",
+  "service_id": "element",
+  "name": "악티늄족선",
+  "subtitle": "89–103번",
+  "color": "line-an",
+  "description": "5f 오비탈 구간",
+  "station_ids": [
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103
+  ],
+  "group": "zone",
+  "curriculum": [
+    "화학",
+    "고급화학"
+  ],
+  "level": 3,
+  "status": "open",
+  "order": 6
+}

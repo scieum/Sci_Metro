@@ -1,0 +1,1816 @@
+[
+ {
+  "id": 1,
+  "symbol": "H",
+  "name_ko": "수소",
+  "aliases_ko": [],
+  "name_en": "Hydrogen",
+  "period": 1,
+  "group": 1,
+  "block": "s",
+  "category": "nonmetal",
+  "grid": {
+   "row": 1,
+   "col": 1
+  }
+ },
+ {
+  "id": 2,
+  "symbol": "He",
+  "name_ko": "헬륨",
+  "aliases_ko": [],
+  "name_en": "Helium",
+  "period": 1,
+  "group": 18,
+  "block": "p",
+  "category": "noble_gas",
+  "grid": {
+   "row": 1,
+   "col": 18
+  }
+ },
+ {
+  "id": 3,
+  "symbol": "Li",
+  "name_ko": "리튬",
+  "aliases_ko": [],
+  "name_en": "Lithium",
+  "period": 2,
+  "group": 1,
+  "block": "s",
+  "category": "alkali_metal",
+  "grid": {
+   "row": 2,
+   "col": 1
+  }
+ },
+ {
+  "id": 4,
+  "symbol": "Be",
+  "name_ko": "베릴륨",
+  "aliases_ko": [],
+  "name_en": "Beryllium",
+  "period": 2,
+  "group": 2,
+  "block": "s",
+  "category": "alkaline_earth_metal",
+  "grid": {
+   "row": 2,
+   "col": 2
+  }
+ },
+ {
+  "id": 5,
+  "symbol": "B",
+  "name_ko": "붕소",
+  "aliases_ko": [],
+  "name_en": "Boron",
+  "period": 2,
+  "group": 13,
+  "block": "p",
+  "category": "metalloid",
+  "grid": {
+   "row": 2,
+   "col": 13
+  }
+ },
+ {
+  "id": 6,
+  "symbol": "C",
+  "name_ko": "탄소",
+  "aliases_ko": [],
+  "name_en": "Carbon",
+  "period": 2,
+  "group": 14,
+  "block": "p",
+  "category": "nonmetal",
+  "grid": {
+   "row": 2,
+   "col": 14
+  }
+ },
+ {
+  "id": 7,
+  "symbol": "N",
+  "name_ko": "질소",
+  "aliases_ko": [],
+  "name_en": "Nitrogen",
+  "period": 2,
+  "group": 15,
+  "block": "p",
+  "category": "nonmetal",
+  "grid": {
+   "row": 2,
+   "col": 15
+  }
+ },
+ {
+  "id": 8,
+  "symbol": "O",
+  "name_ko": "산소",
+  "aliases_ko": [],
+  "name_en": "Oxygen",
+  "period": 2,
+  "group": 16,
+  "block": "p",
+  "category": "nonmetal",
+  "grid": {
+   "row": 2,
+   "col": 16
+  }
+ },
+ {
+  "id": 9,
+  "symbol": "F",
+  "name_ko": "플루오린",
+  "aliases_ko": [
+   "불소"
+  ],
+  "name_en": "Fluorine",
+  "period": 2,
+  "group": 17,
+  "block": "p",
+  "category": "halogen",
+  "grid": {
+   "row": 2,
+   "col": 17
+  }
+ },
+ {
+  "id": 10,
+  "symbol": "Ne",
+  "name_ko": "네온",
+  "aliases_ko": [],
+  "name_en": "Neon",
+  "period": 2,
+  "group": 18,
+  "block": "p",
+  "category": "noble_gas",
+  "grid": {
+   "row": 2,
+   "col": 18
+  }
+ },
+ {
+  "id": 11,
+  "symbol": "Na",
+  "name_ko": "나트륨",
+  "aliases_ko": [
+   "소듐"
+  ],
+  "name_en": "Sodium",
+  "period": 3,
+  "group": 1,
+  "block": "s",
+  "category": "alkali_metal",
+  "grid": {
+   "row": 3,
+   "col": 1
+  }
+ },
+ {
+  "id": 12,
+  "symbol": "Mg",
+  "name_ko": "마그네슘",
+  "aliases_ko": [],
+  "name_en": "Magnesium",
+  "period": 3,
+  "group": 2,
+  "block": "s",
+  "category": "alkaline_earth_metal",
+  "grid": {
+   "row": 3,
+   "col": 2
+  }
+ },
+ {
+  "id": 13,
+  "symbol": "Al",
+  "name_ko": "알루미늄",
+  "aliases_ko": [],
+  "name_en": "Aluminium",
+  "period": 3,
+  "group": 13,
+  "block": "p",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 3,
+   "col": 13
+  }
+ },
+ {
+  "id": 14,
+  "symbol": "Si",
+  "name_ko": "규소",
+  "aliases_ko": [
+   "실리콘"
+  ],
+  "name_en": "Silicon",
+  "period": 3,
+  "group": 14,
+  "block": "p",
+  "category": "metalloid",
+  "grid": {
+   "row": 3,
+   "col": 14
+  }
+ },
+ {
+  "id": 15,
+  "symbol": "P",
+  "name_ko": "인",
+  "aliases_ko": [],
+  "name_en": "Phosphorus",
+  "period": 3,
+  "group": 15,
+  "block": "p",
+  "category": "nonmetal",
+  "grid": {
+   "row": 3,
+   "col": 15
+  }
+ },
+ {
+  "id": 16,
+  "symbol": "S",
+  "name_ko": "황",
+  "aliases_ko": [],
+  "name_en": "Sulfur",
+  "period": 3,
+  "group": 16,
+  "block": "p",
+  "category": "nonmetal",
+  "grid": {
+   "row": 3,
+   "col": 16
+  }
+ },
+ {
+  "id": 17,
+  "symbol": "Cl",
+  "name_ko": "염소",
+  "aliases_ko": [],
+  "name_en": "Chlorine",
+  "period": 3,
+  "group": 17,
+  "block": "p",
+  "category": "halogen",
+  "grid": {
+   "row": 3,
+   "col": 17
+  }
+ },
+ {
+  "id": 18,
+  "symbol": "Ar",
+  "name_ko": "아르곤",
+  "aliases_ko": [],
+  "name_en": "Argon",
+  "period": 3,
+  "group": 18,
+  "block": "p",
+  "category": "noble_gas",
+  "grid": {
+   "row": 3,
+   "col": 18
+  }
+ },
+ {
+  "id": 19,
+  "symbol": "K",
+  "name_ko": "칼륨",
+  "aliases_ko": [
+   "포타슘"
+  ],
+  "name_en": "Potassium",
+  "period": 4,
+  "group": 1,
+  "block": "s",
+  "category": "alkali_metal",
+  "grid": {
+   "row": 4,
+   "col": 1
+  }
+ },
+ {
+  "id": 20,
+  "symbol": "Ca",
+  "name_ko": "칼슘",
+  "aliases_ko": [],
+  "name_en": "Calcium",
+  "period": 4,
+  "group": 2,
+  "block": "s",
+  "category": "alkaline_earth_metal",
+  "grid": {
+   "row": 4,
+   "col": 2
+  }
+ },
+ {
+  "id": 21,
+  "symbol": "Sc",
+  "name_ko": "스칸듐",
+  "aliases_ko": [],
+  "name_en": "Scandium",
+  "period": 4,
+  "group": 3,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 3
+  }
+ },
+ {
+  "id": 22,
+  "symbol": "Ti",
+  "name_ko": "타이타늄",
+  "aliases_ko": [
+   "티타늄"
+  ],
+  "name_en": "Titanium",
+  "period": 4,
+  "group": 4,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 4
+  }
+ },
+ {
+  "id": 23,
+  "symbol": "V",
+  "name_ko": "바나듐",
+  "aliases_ko": [],
+  "name_en": "Vanadium",
+  "period": 4,
+  "group": 5,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 5
+  }
+ },
+ {
+  "id": 24,
+  "symbol": "Cr",
+  "name_ko": "크로뮴",
+  "aliases_ko": [
+   "크롬"
+  ],
+  "name_en": "Chromium",
+  "period": 4,
+  "group": 6,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 6
+  }
+ },
+ {
+  "id": 25,
+  "symbol": "Mn",
+  "name_ko": "망가니즈",
+  "aliases_ko": [
+   "망간"
+  ],
+  "name_en": "Manganese",
+  "period": 4,
+  "group": 7,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 7
+  }
+ },
+ {
+  "id": 26,
+  "symbol": "Fe",
+  "name_ko": "철",
+  "aliases_ko": [],
+  "name_en": "Iron",
+  "period": 4,
+  "group": 8,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 8
+  }
+ },
+ {
+  "id": 27,
+  "symbol": "Co",
+  "name_ko": "코발트",
+  "aliases_ko": [],
+  "name_en": "Cobalt",
+  "period": 4,
+  "group": 9,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 9
+  }
+ },
+ {
+  "id": 28,
+  "symbol": "Ni",
+  "name_ko": "니켈",
+  "aliases_ko": [],
+  "name_en": "Nickel",
+  "period": 4,
+  "group": 10,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 10
+  }
+ },
+ {
+  "id": 29,
+  "symbol": "Cu",
+  "name_ko": "구리",
+  "aliases_ko": [],
+  "name_en": "Copper",
+  "period": 4,
+  "group": 11,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 11
+  }
+ },
+ {
+  "id": 30,
+  "symbol": "Zn",
+  "name_ko": "아연",
+  "aliases_ko": [],
+  "name_en": "Zinc",
+  "period": 4,
+  "group": 12,
+  "block": "d",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 12
+  }
+ },
+ {
+  "id": 31,
+  "symbol": "Ga",
+  "name_ko": "갈륨",
+  "aliases_ko": [],
+  "name_en": "Gallium",
+  "period": 4,
+  "group": 13,
+  "block": "p",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 4,
+   "col": 13
+  }
+ },
+ {
+  "id": 32,
+  "symbol": "Ge",
+  "name_ko": "저마늄",
+  "aliases_ko": [
+   "게르마늄"
+  ],
+  "name_en": "Germanium",
+  "period": 4,
+  "group": 14,
+  "block": "p",
+  "category": "metalloid",
+  "grid": {
+   "row": 4,
+   "col": 14
+  }
+ },
+ {
+  "id": 33,
+  "symbol": "As",
+  "name_ko": "비소",
+  "aliases_ko": [],
+  "name_en": "Arsenic",
+  "period": 4,
+  "group": 15,
+  "block": "p",
+  "category": "metalloid",
+  "grid": {
+   "row": 4,
+   "col": 15
+  }
+ },
+ {
+  "id": 34,
+  "symbol": "Se",
+  "name_ko": "셀레늄",
+  "aliases_ko": [
+   "셀렌"
+  ],
+  "name_en": "Selenium",
+  "period": 4,
+  "group": 16,
+  "block": "p",
+  "category": "nonmetal",
+  "grid": {
+   "row": 4,
+   "col": 16
+  }
+ },
+ {
+  "id": 35,
+  "symbol": "Br",
+  "name_ko": "브로민",
+  "aliases_ko": [
+   "브롬"
+  ],
+  "name_en": "Bromine",
+  "period": 4,
+  "group": 17,
+  "block": "p",
+  "category": "halogen",
+  "grid": {
+   "row": 4,
+   "col": 17
+  }
+ },
+ {
+  "id": 36,
+  "symbol": "Kr",
+  "name_ko": "크립톤",
+  "aliases_ko": [],
+  "name_en": "Krypton",
+  "period": 4,
+  "group": 18,
+  "block": "p",
+  "category": "noble_gas",
+  "grid": {
+   "row": 4,
+   "col": 18
+  }
+ },
+ {
+  "id": 37,
+  "symbol": "Rb",
+  "name_ko": "루비듐",
+  "aliases_ko": [],
+  "name_en": "Rubidium",
+  "period": 5,
+  "group": 1,
+  "block": "s",
+  "category": "alkali_metal",
+  "grid": {
+   "row": 5,
+   "col": 1
+  }
+ },
+ {
+  "id": 38,
+  "symbol": "Sr",
+  "name_ko": "스트론튬",
+  "aliases_ko": [],
+  "name_en": "Strontium",
+  "period": 5,
+  "group": 2,
+  "block": "s",
+  "category": "alkaline_earth_metal",
+  "grid": {
+   "row": 5,
+   "col": 2
+  }
+ },
+ {
+  "id": 39,
+  "symbol": "Y",
+  "name_ko": "이트륨",
+  "aliases_ko": [],
+  "name_en": "Yttrium",
+  "period": 5,
+  "group": 3,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 3
+  }
+ },
+ {
+  "id": 40,
+  "symbol": "Zr",
+  "name_ko": "지르코늄",
+  "aliases_ko": [],
+  "name_en": "Zirconium",
+  "period": 5,
+  "group": 4,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 4
+  }
+ },
+ {
+  "id": 41,
+  "symbol": "Nb",
+  "name_ko": "나이오븀",
+  "aliases_ko": [
+   "니오븀"
+  ],
+  "name_en": "Niobium",
+  "period": 5,
+  "group": 5,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 5
+  }
+ },
+ {
+  "id": 42,
+  "symbol": "Mo",
+  "name_ko": "몰리브데넘",
+  "aliases_ko": [
+   "몰리브덴"
+  ],
+  "name_en": "Molybdenum",
+  "period": 5,
+  "group": 6,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 6
+  }
+ },
+ {
+  "id": 43,
+  "symbol": "Tc",
+  "name_ko": "테크네튬",
+  "aliases_ko": [],
+  "name_en": "Technetium",
+  "period": 5,
+  "group": 7,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 7
+  }
+ },
+ {
+  "id": 44,
+  "symbol": "Ru",
+  "name_ko": "루테늄",
+  "aliases_ko": [],
+  "name_en": "Ruthenium",
+  "period": 5,
+  "group": 8,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 8
+  }
+ },
+ {
+  "id": 45,
+  "symbol": "Rh",
+  "name_ko": "로듐",
+  "aliases_ko": [],
+  "name_en": "Rhodium",
+  "period": 5,
+  "group": 9,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 9
+  }
+ },
+ {
+  "id": 46,
+  "symbol": "Pd",
+  "name_ko": "팔라듐",
+  "aliases_ko": [],
+  "name_en": "Palladium",
+  "period": 5,
+  "group": 10,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 10
+  }
+ },
+ {
+  "id": 47,
+  "symbol": "Ag",
+  "name_ko": "은",
+  "aliases_ko": [],
+  "name_en": "Silver",
+  "period": 5,
+  "group": 11,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 11
+  }
+ },
+ {
+  "id": 48,
+  "symbol": "Cd",
+  "name_ko": "카드뮴",
+  "aliases_ko": [],
+  "name_en": "Cadmium",
+  "period": 5,
+  "group": 12,
+  "block": "d",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 12
+  }
+ },
+ {
+  "id": 49,
+  "symbol": "In",
+  "name_ko": "인듐",
+  "aliases_ko": [],
+  "name_en": "Indium",
+  "period": 5,
+  "group": 13,
+  "block": "p",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 13
+  }
+ },
+ {
+  "id": 50,
+  "symbol": "Sn",
+  "name_ko": "주석",
+  "aliases_ko": [],
+  "name_en": "Tin",
+  "period": 5,
+  "group": 14,
+  "block": "p",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 5,
+   "col": 14
+  }
+ },
+ {
+  "id": 51,
+  "symbol": "Sb",
+  "name_ko": "안티모니",
+  "aliases_ko": [
+   "안티몬"
+  ],
+  "name_en": "Antimony",
+  "period": 5,
+  "group": 15,
+  "block": "p",
+  "category": "metalloid",
+  "grid": {
+   "row": 5,
+   "col": 15
+  }
+ },
+ {
+  "id": 52,
+  "symbol": "Te",
+  "name_ko": "텔루륨",
+  "aliases_ko": [
+   "텔루르"
+  ],
+  "name_en": "Tellurium",
+  "period": 5,
+  "group": 16,
+  "block": "p",
+  "category": "metalloid",
+  "grid": {
+   "row": 5,
+   "col": 16
+  }
+ },
+ {
+  "id": 53,
+  "symbol": "I",
+  "name_ko": "아이오딘",
+  "aliases_ko": [
+   "요오드"
+  ],
+  "name_en": "Iodine",
+  "period": 5,
+  "group": 17,
+  "block": "p",
+  "category": "halogen",
+  "grid": {
+   "row": 5,
+   "col": 17
+  }
+ },
+ {
+  "id": 54,
+  "symbol": "Xe",
+  "name_ko": "제논",
+  "aliases_ko": [
+   "크세논"
+  ],
+  "name_en": "Xenon",
+  "period": 5,
+  "group": 18,
+  "block": "p",
+  "category": "noble_gas",
+  "grid": {
+   "row": 5,
+   "col": 18
+  }
+ },
+ {
+  "id": 55,
+  "symbol": "Cs",
+  "name_ko": "세슘",
+  "aliases_ko": [],
+  "name_en": "Caesium",
+  "period": 6,
+  "group": 1,
+  "block": "s",
+  "category": "alkali_metal",
+  "grid": {
+   "row": 6,
+   "col": 1
+  }
+ },
+ {
+  "id": 56,
+  "symbol": "Ba",
+  "name_ko": "바륨",
+  "aliases_ko": [],
+  "name_en": "Barium",
+  "period": 6,
+  "group": 2,
+  "block": "s",
+  "category": "alkaline_earth_metal",
+  "grid": {
+   "row": 6,
+   "col": 2
+  }
+ },
+ {
+  "id": 57,
+  "symbol": "La",
+  "name_ko": "란타넘",
+  "aliases_ko": [
+   "란탄"
+  ],
+  "name_en": "Lanthanum",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 3
+  }
+ },
+ {
+  "id": 58,
+  "symbol": "Ce",
+  "name_ko": "세륨",
+  "aliases_ko": [],
+  "name_en": "Cerium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 4
+  }
+ },
+ {
+  "id": 59,
+  "symbol": "Pr",
+  "name_ko": "프라세오디뮴",
+  "aliases_ko": [],
+  "name_en": "Praseodymium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 5
+  }
+ },
+ {
+  "id": 60,
+  "symbol": "Nd",
+  "name_ko": "네오디뮴",
+  "aliases_ko": [],
+  "name_en": "Neodymium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 6
+  }
+ },
+ {
+  "id": 61,
+  "symbol": "Pm",
+  "name_ko": "프로메튬",
+  "aliases_ko": [],
+  "name_en": "Promethium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 7
+  }
+ },
+ {
+  "id": 62,
+  "symbol": "Sm",
+  "name_ko": "사마륨",
+  "aliases_ko": [],
+  "name_en": "Samarium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 8
+  }
+ },
+ {
+  "id": 63,
+  "symbol": "Eu",
+  "name_ko": "유로퓸",
+  "aliases_ko": [],
+  "name_en": "Europium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 9
+  }
+ },
+ {
+  "id": 64,
+  "symbol": "Gd",
+  "name_ko": "가돌리늄",
+  "aliases_ko": [],
+  "name_en": "Gadolinium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 10
+  }
+ },
+ {
+  "id": 65,
+  "symbol": "Tb",
+  "name_ko": "터븀",
+  "aliases_ko": [
+   "테르븀"
+  ],
+  "name_en": "Terbium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 11
+  }
+ },
+ {
+  "id": 66,
+  "symbol": "Dy",
+  "name_ko": "디스프로슘",
+  "aliases_ko": [],
+  "name_en": "Dysprosium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 12
+  }
+ },
+ {
+  "id": 67,
+  "symbol": "Ho",
+  "name_ko": "홀뮴",
+  "aliases_ko": [],
+  "name_en": "Holmium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 13
+  }
+ },
+ {
+  "id": 68,
+  "symbol": "Er",
+  "name_ko": "어븀",
+  "aliases_ko": [
+   "에르븀"
+  ],
+  "name_en": "Erbium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 14
+  }
+ },
+ {
+  "id": 69,
+  "symbol": "Tm",
+  "name_ko": "툴륨",
+  "aliases_ko": [],
+  "name_en": "Thulium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 15
+  }
+ },
+ {
+  "id": 70,
+  "symbol": "Yb",
+  "name_ko": "이터븀",
+  "aliases_ko": [
+   "이테르븀"
+  ],
+  "name_en": "Ytterbium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 16
+  }
+ },
+ {
+  "id": 71,
+  "symbol": "Lu",
+  "name_ko": "루테튬",
+  "aliases_ko": [],
+  "name_en": "Lutetium",
+  "period": 6,
+  "group": null,
+  "block": "f",
+  "category": "lanthanide",
+  "grid": {
+   "row": 8,
+   "col": 17
+  }
+ },
+ {
+  "id": 72,
+  "symbol": "Hf",
+  "name_ko": "하프늄",
+  "aliases_ko": [],
+  "name_en": "Hafnium",
+  "period": 6,
+  "group": 4,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 4
+  }
+ },
+ {
+  "id": 73,
+  "symbol": "Ta",
+  "name_ko": "탄탈럼",
+  "aliases_ko": [
+   "탄탈"
+  ],
+  "name_en": "Tantalum",
+  "period": 6,
+  "group": 5,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 5
+  }
+ },
+ {
+  "id": 74,
+  "symbol": "W",
+  "name_ko": "텅스텐",
+  "aliases_ko": [],
+  "name_en": "Tungsten",
+  "period": 6,
+  "group": 6,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 6
+  }
+ },
+ {
+  "id": 75,
+  "symbol": "Re",
+  "name_ko": "레늄",
+  "aliases_ko": [],
+  "name_en": "Rhenium",
+  "period": 6,
+  "group": 7,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 7
+  }
+ },
+ {
+  "id": 76,
+  "symbol": "Os",
+  "name_ko": "오스뮴",
+  "aliases_ko": [],
+  "name_en": "Osmium",
+  "period": 6,
+  "group": 8,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 8
+  }
+ },
+ {
+  "id": 77,
+  "symbol": "Ir",
+  "name_ko": "이리듐",
+  "aliases_ko": [],
+  "name_en": "Iridium",
+  "period": 6,
+  "group": 9,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 9
+  }
+ },
+ {
+  "id": 78,
+  "symbol": "Pt",
+  "name_ko": "백금",
+  "aliases_ko": [],
+  "name_en": "Platinum",
+  "period": 6,
+  "group": 10,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 10
+  }
+ },
+ {
+  "id": 79,
+  "symbol": "Au",
+  "name_ko": "금",
+  "aliases_ko": [],
+  "name_en": "Gold",
+  "period": 6,
+  "group": 11,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 11
+  }
+ },
+ {
+  "id": 80,
+  "symbol": "Hg",
+  "name_ko": "수은",
+  "aliases_ko": [],
+  "name_en": "Mercury",
+  "period": 6,
+  "group": 12,
+  "block": "d",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 12
+  }
+ },
+ {
+  "id": 81,
+  "symbol": "Tl",
+  "name_ko": "탈륨",
+  "aliases_ko": [],
+  "name_en": "Thallium",
+  "period": 6,
+  "group": 13,
+  "block": "p",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 13
+  }
+ },
+ {
+  "id": 82,
+  "symbol": "Pb",
+  "name_ko": "납",
+  "aliases_ko": [],
+  "name_en": "Lead",
+  "period": 6,
+  "group": 14,
+  "block": "p",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 14
+  }
+ },
+ {
+  "id": 83,
+  "symbol": "Bi",
+  "name_ko": "비스무트",
+  "aliases_ko": [],
+  "name_en": "Bismuth",
+  "period": 6,
+  "group": 15,
+  "block": "p",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 15
+  }
+ },
+ {
+  "id": 84,
+  "symbol": "Po",
+  "name_ko": "폴로늄",
+  "aliases_ko": [],
+  "name_en": "Polonium",
+  "period": 6,
+  "group": 16,
+  "block": "p",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 6,
+   "col": 16
+  }
+ },
+ {
+  "id": 85,
+  "symbol": "At",
+  "name_ko": "아스타틴",
+  "aliases_ko": [],
+  "name_en": "Astatine",
+  "period": 6,
+  "group": 17,
+  "block": "p",
+  "category": "metalloid",
+  "grid": {
+   "row": 6,
+   "col": 17
+  }
+ },
+ {
+  "id": 86,
+  "symbol": "Rn",
+  "name_ko": "라돈",
+  "aliases_ko": [],
+  "name_en": "Radon",
+  "period": 6,
+  "group": 18,
+  "block": "p",
+  "category": "noble_gas",
+  "grid": {
+   "row": 6,
+   "col": 18
+  }
+ },
+ {
+  "id": 87,
+  "symbol": "Fr",
+  "name_ko": "프랑슘",
+  "aliases_ko": [],
+  "name_en": "Francium",
+  "period": 7,
+  "group": 1,
+  "block": "s",
+  "category": "alkali_metal",
+  "grid": {
+   "row": 7,
+   "col": 1
+  }
+ },
+ {
+  "id": 88,
+  "symbol": "Ra",
+  "name_ko": "라듐",
+  "aliases_ko": [],
+  "name_en": "Radium",
+  "period": 7,
+  "group": 2,
+  "block": "s",
+  "category": "alkaline_earth_metal",
+  "grid": {
+   "row": 7,
+   "col": 2
+  }
+ },
+ {
+  "id": 89,
+  "symbol": "Ac",
+  "name_ko": "악티늄",
+  "aliases_ko": [],
+  "name_en": "Actinium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 3
+  }
+ },
+ {
+  "id": 90,
+  "symbol": "Th",
+  "name_ko": "토륨",
+  "aliases_ko": [],
+  "name_en": "Thorium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 4
+  }
+ },
+ {
+  "id": 91,
+  "symbol": "Pa",
+  "name_ko": "프로트악티늄",
+  "aliases_ko": [
+   "프로탁티늄"
+  ],
+  "name_en": "Protactinium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 5
+  }
+ },
+ {
+  "id": 92,
+  "symbol": "U",
+  "name_ko": "우라늄",
+  "aliases_ko": [],
+  "name_en": "Uranium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 6
+  }
+ },
+ {
+  "id": 93,
+  "symbol": "Np",
+  "name_ko": "넵투늄",
+  "aliases_ko": [],
+  "name_en": "Neptunium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 7
+  }
+ },
+ {
+  "id": 94,
+  "symbol": "Pu",
+  "name_ko": "플루토늄",
+  "aliases_ko": [],
+  "name_en": "Plutonium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 8
+  }
+ },
+ {
+  "id": 95,
+  "symbol": "Am",
+  "name_ko": "아메리슘",
+  "aliases_ko": [],
+  "name_en": "Americium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 9
+  }
+ },
+ {
+  "id": 96,
+  "symbol": "Cm",
+  "name_ko": "퀴륨",
+  "aliases_ko": [],
+  "name_en": "Curium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 10
+  }
+ },
+ {
+  "id": 97,
+  "symbol": "Bk",
+  "name_ko": "버클륨",
+  "aliases_ko": [],
+  "name_en": "Berkelium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 11
+  }
+ },
+ {
+  "id": 98,
+  "symbol": "Cf",
+  "name_ko": "캘리포늄",
+  "aliases_ko": [],
+  "name_en": "Californium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 12
+  }
+ },
+ {
+  "id": 99,
+  "symbol": "Es",
+  "name_ko": "아인슈타이늄",
+  "aliases_ko": [],
+  "name_en": "Einsteinium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 13
+  }
+ },
+ {
+  "id": 100,
+  "symbol": "Fm",
+  "name_ko": "페르뮴",
+  "aliases_ko": [],
+  "name_en": "Fermium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 14
+  }
+ },
+ {
+  "id": 101,
+  "symbol": "Md",
+  "name_ko": "멘델레븀",
+  "aliases_ko": [],
+  "name_en": "Mendelevium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 15
+  }
+ },
+ {
+  "id": 102,
+  "symbol": "No",
+  "name_ko": "노벨륨",
+  "aliases_ko": [],
+  "name_en": "Nobelium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 16
+  }
+ },
+ {
+  "id": 103,
+  "symbol": "Lr",
+  "name_ko": "로렌슘",
+  "aliases_ko": [],
+  "name_en": "Lawrencium",
+  "period": 7,
+  "group": null,
+  "block": "f",
+  "category": "actinide",
+  "grid": {
+   "row": 9,
+   "col": 17
+  }
+ },
+ {
+  "id": 104,
+  "symbol": "Rf",
+  "name_ko": "러더포듐",
+  "aliases_ko": [],
+  "name_en": "Rutherfordium",
+  "period": 7,
+  "group": 4,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 7,
+   "col": 4
+  }
+ },
+ {
+  "id": 105,
+  "symbol": "Db",
+  "name_ko": "더브늄",
+  "aliases_ko": [],
+  "name_en": "Dubnium",
+  "period": 7,
+  "group": 5,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 7,
+   "col": 5
+  }
+ },
+ {
+  "id": 106,
+  "symbol": "Sg",
+  "name_ko": "시보귬",
+  "aliases_ko": [],
+  "name_en": "Seaborgium",
+  "period": 7,
+  "group": 6,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 7,
+   "col": 6
+  }
+ },
+ {
+  "id": 107,
+  "symbol": "Bh",
+  "name_ko": "보륨",
+  "aliases_ko": [],
+  "name_en": "Bohrium",
+  "period": 7,
+  "group": 7,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 7,
+   "col": 7
+  }
+ },
+ {
+  "id": 108,
+  "symbol": "Hs",
+  "name_ko": "하슘",
+  "aliases_ko": [],
+  "name_en": "Hassium",
+  "period": 7,
+  "group": 8,
+  "block": "d",
+  "category": "transition_metal",
+  "grid": {
+   "row": 7,
+   "col": 8
+  }
+ },
+ {
+  "id": 109,
+  "symbol": "Mt",
+  "name_ko": "마이트너륨",
+  "aliases_ko": [],
+  "name_en": "Meitnerium",
+  "period": 7,
+  "group": 9,
+  "block": "d",
+  "category": "unknown",
+  "grid": {
+   "row": 7,
+   "col": 9
+  }
+ },
+ {
+  "id": 110,
+  "symbol": "Ds",
+  "name_ko": "다름슈타튬",
+  "aliases_ko": [],
+  "name_en": "Darmstadtium",
+  "period": 7,
+  "group": 10,
+  "block": "d",
+  "category": "unknown",
+  "grid": {
+   "row": 7,
+   "col": 10
+  }
+ },
+ {
+  "id": 111,
+  "symbol": "Rg",
+  "name_ko": "뢴트게늄",
+  "aliases_ko": [],
+  "name_en": "Roentgenium",
+  "period": 7,
+  "group": 11,
+  "block": "d",
+  "category": "unknown",
+  "grid": {
+   "row": 7,
+   "col": 11
+  }
+ },
+ {
+  "id": 112,
+  "symbol": "Cn",
+  "name_ko": "코페르니슘",
+  "aliases_ko": [],
+  "name_en": "Copernicium",
+  "period": 7,
+  "group": 12,
+  "block": "d",
+  "category": "post_transition_metal",
+  "grid": {
+   "row": 7,
+   "col": 12
+  }
+ },
+ {
+  "id": 113,
+  "symbol": "Nh",
+  "name_ko": "니호늄",
+  "aliases_ko": [],
+  "name_en": "Nihonium",
+  "period": 7,
+  "group": 13,
+  "block": "p",
+  "category": "unknown",
+  "grid": {
+   "row": 7,
+   "col": 13
+  }
+ },
+ {
+  "id": 114,
+  "symbol": "Fl",
+  "name_ko": "플레로븀",
+  "aliases_ko": [],
+  "name_en": "Flerovium",
+  "period": 7,
+  "group": 14,
+  "block": "p",
+  "category": "unknown",
+  "grid": {
+   "row": 7,
+   "col": 14
+  }
+ },
+ {
+  "id": 115,
+  "symbol": "Mc",
+  "name_ko": "모스코븀",
+  "aliases_ko": [],
+  "name_en": "Moscovium",
+  "period": 7,
+  "group": 15,
+  "block": "p",
+  "category": "unknown",
+  "grid": {
+   "row": 7,
+   "col": 15
+  }
+ },
+ {
+  "id": 116,
+  "symbol": "Lv",
+  "name_ko": "리버모륨",
+  "aliases_ko": [],
+  "name_en": "Livermorium",
+  "period": 7,
+  "group": 16,
+  "block": "p",
+  "category": "unknown",
+  "grid": {
+   "row": 7,
+   "col": 16
+  }
+ },
+ {
+  "id": 117,
+  "symbol": "Ts",
+  "name_ko": "테네신",
+  "aliases_ko": [],
+  "name_en": "Tennessine",
+  "period": 7,
+  "group": 17,
+  "block": "p",
+  "category": "unknown",
+  "grid": {
+   "row": 7,
+   "col": 17
+  }
+ },
+ {
+  "id": 118,
+  "symbol": "Og",
+  "name_ko": "오가네손",
+  "aliases_ko": [],
+  "name_en": "Oganesson",
+  "period": 7,
+  "group": 18,
+  "block": "p",
+  "category": "unknown",
+  "grid": {
+   "row": 7,
+   "col": 18
+  }
+ }
+]

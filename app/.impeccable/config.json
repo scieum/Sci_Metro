@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "src/styles.css"
+        ],
+        "createdAt": "2026-11-13T05:18:58.704Z",
+        "reason": "docs/design.md 6-1: current-station tile (.cur) is specified as a 3px metro-blue border on a 12px-radius tile; matches approved Figma play screen"
+      }
+    ]
+  }
+}

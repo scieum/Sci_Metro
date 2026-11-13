@@ -1,0 +1,33 @@
+{
+  "id": "lanthanide",
+  "service_id": "element",
+  "name": "란타넘족선",
+  "subtitle": "57–71번",
+  "color": "line-ln",
+  "description": "4f 오비탈 구간",
+  "station_ids": [
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "group": "zone",
+  "curriculum": [
+    "화학",
+    "고급화학"
+  ],
+  "level": 3,
+  "status": "open",
+  "order": 5
+}

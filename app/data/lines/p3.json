@@ -1,0 +1,25 @@
+{
+  "id": "p3",
+  "service_id": "element",
+  "name": "3주기선",
+  "subtitle": "Na–Ar",
+  "color": "line-p3",
+  "description": "전자 껍질 세 개, 나트륨부터 아르곤까지",
+  "station_ids": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "group": "period",
+  "curriculum": [
+    "통합과학"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 11
+}

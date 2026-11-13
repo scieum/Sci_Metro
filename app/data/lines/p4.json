@@ -1,0 +1,35 @@
+{
+  "id": "p4",
+  "service_id": "element",
+  "name": "4주기선",
+  "subtitle": "K–Kr",
+  "color": "line-p4",
+  "description": "전이 금속이 처음 끼어드는 18역",
+  "station_ids": [
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "group": "period",
+  "curriculum": [
+    "화학"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 12
+}

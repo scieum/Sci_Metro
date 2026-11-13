@@ -1,0 +1,27 @@
+{
+  "id": "tm2",
+  "service_id": "element",
+  "name": "전이금속 2호선",
+  "subtitle": "5주기 Y–Cd",
+  "color": "line-tm2",
+  "description": "4d 오비탈 구간",
+  "station_ids": [
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ],
+  "group": "zone",
+  "curriculum": [
+    "화학"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 3
+}

@@ -1,0 +1,27 @@
+{
+  "id": "tm1",
+  "service_id": "element",
+  "name": "전이금속 1호선",
+  "subtitle": "4주기 Sc–Zn",
+  "color": "line-tm1",
+  "description": "3d 오비탈이 채워지는 구간",
+  "station_ids": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "group": "zone",
+  "curriculum": [
+    "화학"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 2
+}

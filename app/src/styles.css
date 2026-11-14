@@ -9,6 +9,9 @@
   --line-basic: #2b2f3a; --line-tm1: #2a9d8f; --line-tm2: #1f6f66; --line-ln: #b07d62; --line-an: #7d5a4f;
   --line-alkali: #e0894b; --line-halogen: #8e6cc9; --line-noble: #3c9cc7; --line-tm-all: #2f855a;
   --line-p2: #3f4e7a; --line-p3: #6a4c93; --line-p4: #1f6f8b; --line-p5: #9a6b1f; --line-p6: #5a6b2e; --line-p7: #4b5563; --line-full: #1d4e89;
+  /* Organism_Metro 노선 (work/organism/S2/keyscreens.md) */
+  --line-digestive: #c8743a; --line-circulation: #b5474b; --line-respiration: #3a8fb7; --line-excretion: #b8962e; --line-reaction: #7b5fc7; --line-reflex: #4f6bb0;
+  --line-vision: #2f7d6d; --line-hearing: #a2577d; --line-nephron: #8a6d1f; --line-neuron: #5b3fa0; --line-reflex-arc: #4b5563; --line-oxygen: #1f7a8c;
   --r8: 8px; --r12: 12px; --pill: 999px;
   --font: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   color-scheme: light;
@@ -18,7 +21,7 @@
     --bg: #111318; --surface: #1a1d24; --primary-tint: #1e2540; --border: #2a2e37;
     --text: #f1f3f7; --text-sub: #9aa1ae; --text-disabled: #5b616d;
     --primary: #4c6ef5; --danger: #fa5252; --success: #51cf66;
-    --line-basic: #c9ced8; --line-p7: #9aa3b2; --line-p2: #7d8fc4; --line-full: #6c9bd8;
+    --line-basic: #c9ced8; --line-p7: #9aa3b2; --line-p2: #7d8fc4; --line-full: #6c9bd8; --line-reflex-arc: #9aa3b2;
     color-scheme: dark;
   }
 }
@@ -185,6 +188,17 @@ dialog.sheet::backdrop { background: rgba(17, 19, 24, .45); }
 .cur input::placeholder { color: var(--text-disabled); font-size: 16px; font-weight: 700; }
 .cur.ok { border-color: var(--success); } .cur.ok input { border-color: var(--success); }
 .cur.shake { animation: shake .32s; }
+/* Organism: 기호 대신 하는 일 문장. 카드가 넓고 이름칸은 아래 */
+.cur.organ { width: min(240px, 62vw); gap: 10px; }
+.cur.organ .n { font-size: 12px; }
+.cur .d { font-size: 16px; font-weight: 700; line-height: 1.45; text-align: center; word-break: keep-all; }
+.cur .d.q { color: var(--text-disabled); }
+@media (min-width: 768px) { .cur.organ { width: 340px; } .cur .d { font-size: 20px; } }
+.tile.organ { width: 72px; }
+.tile.organ .k { font-size: 14px; font-weight: 700; color: var(--text); white-space: normal; word-break: keep-all; text-align: center; }
+.tile.organ.next .k { font-size: 20px; color: var(--text-disabled); }
+.review .tile.organ { width: auto; max-width: 240px; align-items: flex-start; padding: 8px 12px; }
+.tile .dd { font-size: 12px; color: var(--text-sub); line-height: 1.4; word-break: keep-all; }
 @keyframes shake { 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
 .helper { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; padding: 0 16px; }
 .hint { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: var(--pill); background: var(--bg); }
@@ -236,6 +250,11 @@ dialog.sheet::backdrop { background: rgba(17, 19, 24, .45); }
 .pmap .cell-t { font-size: 11px; text-anchor: middle; fill: var(--text-disabled); font-family: var(--font); }
 .pmap .node-t { font-size: 11px; font-weight: 700; text-anchor: middle; font-family: var(--font); }
 .pmap .orbit { fill: none; stroke: var(--primary); stroke-width: 1.5; }
+/* 몸 지도: 그림은 흰 바탕이라 다크 모드에서도 흰 카드로 둔다 */
+.omap { display: block; width: 100%; height: auto; max-height: 46vh; background: #fff; border-radius: var(--r8); }
+.omap.compact { max-height: none; }
+.omap .node-t { font-weight: 700; text-anchor: middle; font-family: var(--font); }
+.omap .omap-t { font-weight: 700; font-family: var(--font); paint-order: stroke; stroke: #fff; stroke-linejoin: round; }
 .nav .brand .sr-wide { display: none; }
 @media (min-width: 1280px) { .nav .brand .sr-wide { display: inline; } }
 .svc-row:hover .label { color: var(--primary); }

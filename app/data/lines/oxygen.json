@@ -25,5 +25,76 @@
   ],
   "level": 3,
   "status": "open",
-  "order": 112
+  "order": 112,
+  "scene": "body",
+  "route": [
+    [
+      343,
+      160,
+      "nose"
+    ],
+    [
+      343,
+      245,
+      "trachea"
+    ],
+    [
+      318,
+      300,
+      "bronchus"
+    ],
+    [
+      288,
+      328,
+      "alveolus"
+    ],
+    [
+      272,
+      368,
+      "lung-capillary"
+    ],
+    [
+      318,
+      352,
+      "pulmonary-vein"
+    ],
+    [
+      372,
+      322,
+      "left-atrium"
+    ],
+    [
+      366,
+      368,
+      "left-ventricle"
+    ],
+    [
+      350,
+      300,
+      "aorta"
+    ],
+    [
+      420,
+      300
+    ],
+    [
+      455,
+      380
+    ],
+    [
+      470,
+      425,
+      "body-capillary"
+    ],
+    [
+      495,
+      470,
+      "tissue-cell"
+    ],
+    [
+      512,
+      515,
+      "mitochondrion"
+    ]
+  ]
 }

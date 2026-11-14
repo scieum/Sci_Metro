@@ -20,5 +20,47 @@
   ],
   "level": 2,
   "status": "open",
-  "order": 107
+  "order": 107,
+  "scene": "eye",
+  "route": [
+    [
+      40,
+      340,
+      "cornea"
+    ],
+    [
+      112,
+      345,
+      "pupil"
+    ],
+    [
+      190,
+      350,
+      "lens"
+    ],
+    [
+      400,
+      350,
+      "vitreous"
+    ],
+    [
+      592,
+      372,
+      "retina"
+    ],
+    [
+      700,
+      378,
+      "optic-nerve"
+    ],
+    [
+      790,
+      368
+    ],
+    [
+      900,
+      330,
+      "cerebrum"
+    ]
+  ]
 }

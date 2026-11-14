@@ -1,6 +1,6 @@
 // 06 주기율표 학습 + 06-b 원소 상세 팝업 (design.md 6-4). Element_Metro 안의 페이지.
 import detailJson from '../../data/elements-detail.json';
-import { allLines, elements, elementById, visibleLines, type ElementData } from '../data';
+import { allLines, elements, elementById, serviceById, visibleLines, type ElementData } from '../data';
 import { serviceTabs } from './lines';
 import { boxes, configuration, shells, subText } from '../map/electrons';
 import { esc, icon, lineColor } from './util';
@@ -97,7 +97,7 @@ export function renderTable(main: HTMLElement, openZ?: number) {
     <div class="lines-head"><div>
       <div class="caption-strong sub">Element_Metro</div>
       <h1 class="title-l h1">주기율표 학습</h1></div></div>
-    ${serviceTabs([{ id: 'zone', label: '족·구간 노선' }, { id: 'period', label: '주기선' }].map((g) => ({ id: g.id, label: `${g.label} ${visibleLines('element').filter((l) => l.group === g.id).length}` })), 'table')}
+    ${serviceTabs(serviceById('element')!, [{ id: 'zone', label: '족·구간 노선' }, { id: 'period', label: '주기선' }].map((g) => ({ id: g.id, label: `${g.label} ${visibleLines('element').filter((l) => l.group === g.id).length}` })), 'table')}
     <div class="table-tools">
       <p class="body-s sub">원소를 누르면 이름, 전자 배치, 발견 이야기까지 볼 수 있어요.</p>
       <label class="search">${icon.search}<input id="q" type="search" placeholder="이름이나 기호로 찾기 (예: 나트륨, Na)" autocomplete="off" aria-label="원소 찾기"></label>

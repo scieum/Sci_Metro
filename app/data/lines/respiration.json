@@ -18,5 +18,41 @@
   ],
   "level": 1,
   "status": "open",
-  "order": 103
+  "order": 103,
+  "scene": "body",
+  "route": [
+    [
+      343,
+      160,
+      "nose"
+    ],
+    [
+      343,
+      200
+    ],
+    [
+      343,
+      245,
+      "trachea"
+    ],
+    [
+      343,
+      282
+    ],
+    [
+      318,
+      300,
+      "bronchus"
+    ],
+    [
+      288,
+      328,
+      "alveolus"
+    ],
+    [
+      272,
+      368,
+      "lung-capillary"
+    ]
+  ]
 }

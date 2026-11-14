@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { matchInstant, matchSubmit, strokes } from '../src/engine/matcher';
 import { Run, isBetter, planPrompts } from '../src/engine/run';
-import { elementById, lineById, lineStations, modeById, services, toStation } from '../src/data';
+import { elementById, lineById, lineStations, modeById, services, toStation, visibleLines } from '../src/data';
 import { typingSteps } from '../src/ui/lines';
 import { boxes, configuration, shells, subText } from '../src/map/electrons';
 import { checkData } from '../scripts/check-data.mjs';
@@ -198,7 +198,7 @@ describe('데이터 검사', () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'sm-data-'));
     // shortcut: cpSync crashes the vitest worker on this OneDrive path, so copy file by file
     fs.mkdirSync(path.join(dir, 'lines'));
-    for (const f of ['stations.json', 'services.json', 'modes.json', 'lines/basic.json']) fs.writeFileSync(path.join(dir, f), fs.readFileSync(path.join(src, f)));
+    for (const f of ['stations.json', 'organs.json', 'scenes.json', 'services.json', 'modes.json', 'lines/basic.json', 'lines/digestive.json']) fs.writeFileSync(path.join(dir, f), fs.readFileSync(path.join(src, f)));
     fs.writeFileSync(path.join(dir, 'lines', 'bad.json'), JSON.stringify({ id: 'bad', service_id: 'element', name: 'x', color: 'x', status: 'open', station_ids: [1, 1, 999] }));
     const st = JSON.parse(fs.readFileSync(path.join(dir, 'stations.json'), 'utf8'));
     st[0].aliases_ko = ['헬륨'];
@@ -207,5 +207,48 @@ describe('데이터 검사', () => {
     expect(errs).toContain('없는 역 999');
     expect(errs).toContain('중복 역 1');
     expect(errs).toContain('별칭 충돌');
+  });
+  it('Organism: 다른 서비스 역 참조·경로 순서 어긋남을 잡는다', () => {
+    const src = path.resolve(__dirname, '../data');
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'sm-data-'));
+    fs.mkdirSync(path.join(dir, 'lines'));
+    for (const f of ['stations.json', 'organs.json', 'scenes.json', 'services.json', 'modes.json', 'lines/basic.json']) fs.writeFileSync(path.join(dir, f), fs.readFileSync(path.join(src, f)));
+    const dig = JSON.parse(fs.readFileSync(path.join(src, 'lines/digestive.json'), 'utf8'));
+    dig.station_ids = ['mouth', 'stomach', 'esophagus', 'small-intestine', 'large-intestine', 'anus'];
+    fs.writeFileSync(path.join(dir, 'lines', 'digestive.json'), JSON.stringify(dig));
+    fs.writeFileSync(path.join(dir, 'lines', 'mix.json'), JSON.stringify({ id: 'mix', service_id: 'organism', name: 'x', color: 'x', status: 'open', group: 'basic', station_ids: ['mouth', 11] }));
+    const errs = checkData(dir).join('\n');
+    expect(errs).toContain('경로의 역 순서');
+    expect(errs).toContain('없는 역 11');
+  });
+});
+
+describe('Organism_Metro', () => {
+  const svc = services.find((s) => s.id === 'organism')!;
+  const dig = lineById('digestive')!;
+  it('이름 쓰기: 하는 일을 보여 주고 이름을 Enter로 낸다', () => {
+    const r = new Run(lineStations(dig), modeById('recall')!, svc.fields);
+    expect(r.prompt).toBe('desc');
+    expect(r.station.fields.desc).toContain('아밀레이스');
+    expect(r.submit('입').kind).toBe('correct');
+    expect(r.submit('위').kind).toBe('wrong'); // 2번째 역은 식도
+  });
+  it('별칭으로 맞히면 공식 이름을 알려 준다 (작은창자 → 소장)', () => {
+    const r = new Run(lineStations(dig, ['small-intestine']), modeById('recall')!, svc.fields);
+    const j = r.submit('작은 창자');
+    expect(j).toMatchObject({ kind: 'correct', viaAlias: '작은창자', shown: '소장' });
+  });
+  it('순서 쓰기: 몇 번째 역인지만 보여 준다', () => {
+    const r = new Run(lineStations(dig), modeById('sequence')!, svc.fields);
+    expect(r.prompt).toBe('order');
+    expect(r.station.fields.order).toBe('1');
+    r.submit('입');
+    expect(r.station.fields.order).toBe('2');
+  });
+  it('모든 노선의 역이 기관 데이터에 있고 장면 위 경로를 가진다', () => {
+    for (const l of visibleLines('organism')) {
+      expect(l.route?.filter((p) => p[2]).map((p) => p[2])).toEqual(l.station_ids);
+      expect(lineStations(l).every((s) => s.fields.name && s.fields.desc)).toBe(true);
+    }
   });
 });

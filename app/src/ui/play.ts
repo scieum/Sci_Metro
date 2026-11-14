@@ -1,28 +1,28 @@
-import { elementById, lineById, lineStations, modeById, services, toStation, visibleLines, type ElementData, type Line } from '../data';
+import { lineById, lineStations, modeById, stopView, visibleLines, type Line, type Service, type StopId, type StopView } from '../data';
 import { Run } from '../engine/run';
 import type { Judgement } from '../engine/types';
-import { mapSvg } from '../map/periodic';
+import { lineMap } from '../map';
 import { addMisses, bestOf, saveRun } from '../store';
 import { drawCard } from './card';
 import { esc, icon, lineColor, navigate, pct, recTime } from './util';
 
-const catVar = (e: ElementData) => `var(--cat-${e.category})`;
-
-export function renderPlay(app: HTMLElement, lineId: string, modeId: string, params: URLSearchParams): () => void {
-  const svc = services[0];
+export function renderPlay(app: HTMLElement, svc: Service, lineId: string, modeId: string, params: URLSearchParams): () => void {
   const line = lineById(lineId);
   const mode = modeById(modeId);
-  if (!line || !mode || !svc.modes.includes(modeId) || (line.status !== 'open' && params.get('preview') !== '1')) {
-    navigate('/element', true);
+  if (!line || line.service_id !== svc.id || !mode || !svc.modes.includes(modeId) || (line.status !== 'open' && params.get('preview') !== '1')) {
+    navigate('/' + svc.id, true);
     return () => {};
   }
   // 틀린 역만 다시 달리기: ?only=11,12 (기록은 최고 기록에 넣지 않는다)
-  const only = (params.get('only') ?? '').split(',').map(Number).filter((n) => line.station_ids.includes(n));
+  const asked = (params.get('only') ?? '').split(',');
+  const only = line.station_ids.filter((id) => asked.includes(String(id)));
   const retry = only.length > 0;
   // routeStops = 노선 순서 (지도·결과 카드), stops = 실제로 달리는 순서 (번호 쓰기는 섞임)
-  const routeStops = (retry ? only : line.station_ids).map((id) => elementById.get(id)!);
-  const run = new Run(retry ? only.map((id) => toStation(elementById.get(id)!)) : lineStations(line), mode, svc.fields);
-  const stops = run.stations.map((s) => elementById.get(Number(s.id))!);
+  const routeIds = retry ? only : line.station_ids;
+  const routeStops = routeIds.map((id) => stopView(line, id));
+  const run = new Run(lineStations(line, routeIds), mode, svc.fields);
+  const stops = run.stations.map((s) => stopView(line, s.id));
+  const organ = !svc.fields.symbol; // 기호가 없는 서비스: 설명 문장을 보고 이름을 쓴다
   const best = retry ? null : bestOf(line.id, mode.id);
   const color = lineColor(line.color);
   const title = retry ? `${line.name} · 틀린 역` : line.name;
@@ -30,14 +30,14 @@ export function renderPlay(app: HTMLElement, lineId: string, modeId: string, par
 
   app.innerHTML = `<div class="play" style="--line:${color}">
     <header class="topbar">
-      <a class="icon-btn" href="/element" data-link aria-label="나가기">${icon.close}</a>
+      <a class="icon-btn" href="/${svc.id}" data-link aria-label="나가기">${icon.close}</a>
       <div class="grow"><span class="dot" style="background:${color}"></span><span class="label">${esc(title)}</span><span class="caption sub">· ${esc(mode.label)}</span></div>
       <span class="caption-strong sub num" id="count"></span>
     </header>
     <div class="progress" id="progress" aria-hidden="true"></div>
     <section class="stage" aria-label="노선도">
       <div class="sign"><span class="dot"></span><span class="label">${esc(line.name)}</span><i></i>
-        <span style="display:flex;flex-direction:column;line-height:1.3"><span class="caption" style="opacity:.7">${esc(first.symbol)} → ${esc(last.symbol)} 방면</span><span class="title-s" id="remain"></span></span></div>
+        <span style="display:flex;flex-direction:column;line-height:1.3"><span class="caption" style="opacity:.7">${esc(first.s || first.k)} → ${esc(last.s || last.k)} 방면</span><span class="title-s" id="remain"></span></span></div>
       <div id="map" style="width:100%"></div>
     </section>
     <section class="platform" id="platform">
@@ -45,7 +45,7 @@ export function renderPlay(app: HTMLElement, lineId: string, modeId: string, par
       <div class="dock" id="dock">
         <div id="prev" class="side prev"></div>
         <div class="cur" id="cur">
-          <span class="n num" style="order:0"></span><span class="s" style="order:1"></span>
+          <span class="n num" style="order:0"></span><span class="s" style="order:1"></span><span class="d" style="order:1" hidden></span>
           <span class="slot" id="slot"><span class="ghost" id="ghost" aria-hidden="true"></span><input id="answer" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done" aria-label="정답 입력" /></span>
           <span class="k" style="order:3"></span>
         </div>
@@ -86,8 +86,7 @@ export function renderPlay(app: HTMLElement, lineId: string, modeId: string, par
 
   const missedSoFar = () => new Set(stops.filter((_, i) => i < run.index && !run.firstTry(i)).map((s) => s.id));
 
-  const tile = (e: ElementData, cls: string, showAll: boolean) =>
-    `<div class="tile ${cls}" style="--cat:${catVar(e)}"><span class="n num">${e.id}</span><span class="s">${showAll ? esc(e.symbol) : '?'}</span><span class="k">${showAll ? esc(e.name_ko) : '?'}</span></div>`;
+  const tile = (e: StopView, cls: string, showAll: boolean) => tileHtml(e, cls, showAll);
 
   function drawStation() {
     const i = run.index;
@@ -97,8 +96,8 @@ export function renderPlay(app: HTMLElement, lineId: string, modeId: string, par
     $('progress').innerHTML = stops.map((_, k) => `<i class="${k < i ? (run.firstTry(k) ? 'pass' : 'miss') : k === i ? 'now' : ''}"></i>`).join('');
     const label = `${line!.name} 노선도, ${i + 1}번째 역`;
     $('map').innerHTML = mode!.shuffle
-      ? mapSvg({ stops: routeStops, color, currentId: stops[i].id, passed: new Set(stops.slice(0, i).map((s) => s.id)), missed: missedSoFar(), label })
-      : mapSvg({ stops, color, index: i, missed: missedSoFar(), label });
+      ? lineMap(line!, { ids: routeIds, currentId: stops[i].id, passed: new Set(stops.slice(0, i).map((s) => s.id)), missed: missedSoFar(), label })
+      : lineMap(line!, { ids: routeIds, index: i, missed: missedSoFar(), label });
     const dist = (d: number) => `d${d}${d === 2 ? ' far' : d === 3 ? ' farther' : ''}`;
     $('prev').innerHTML = [1, 2, 3].filter((d) => i - d >= 0).map((d) => tile(stops[i - d], `${dist(d)}${run.firstTry(i - d) ? '' : ' missed'}`, true)).join('');
     $('next').innerHTML = [1, 2, 3].filter((d) => i + d < n).map((d) => tile(stops[i + d], `next ${dist(d)}`, false)).join('');
@@ -106,10 +105,29 @@ export function renderPlay(app: HTMLElement, lineId: string, modeId: string, par
     const e = stops[i];
     const prompt = run.prompt;
     const keys = run.answerKeys;
-    cur.style.setProperty('--cat', catVar(e));
-    const nEl = cur.querySelector<HTMLElement>('.n')!, sEl = cur.querySelector<HTMLElement>('.s')!, kEl = cur.querySelector<HTMLElement>('.k')!;
-    nEl.textContent = String(e.id);
+    cur.style.setProperty('--cat', e.tint);
+    const nEl = cur.querySelector<HTMLElement>('.n')!, sEl = cur.querySelector<HTMLElement>('.s')!, kEl = cur.querySelector<HTMLElement>('.k')!, dEl = cur.querySelector<HTMLElement>('.d')!;
     const slot = keys[0];
+    const slotEl = $('slot');
+    if (organ) {
+      // Organism: 순서 + 하는 일(순서 쓰기 모드에서는 숨김) + 이름 입력칸
+      cur.classList.add('organ');
+      nEl.textContent = `${e.n}번째 역`;
+      sEl.hidden = true; kEl.hidden = true; dEl.hidden = false;
+      dEl.textContent = prompt === 'desc' ? e.desc ?? '' : '다음 역은?';
+      dEl.classList.toggle('q', prompt !== 'desc');
+      slotEl.style.order = '3';
+      input.className = 'mid';
+      slotEl.className = `slot mid${mode!.ghost ? ' trace' : ''}`;
+      traceAnswer = mode!.ghost ? e.k : '';
+      drawTrace();
+      input.placeholder = '이름으로';
+      $('what').textContent = prompt === 'desc' ? '이름 · Enter로 제출' : '노선도에서 다음 역 이름 · Enter';
+      $('hint').hidden = true;
+      cur.classList.remove('ok');
+      return;
+    }
+    nEl.textContent = e.n;
     // 묻는 칸 = 입력창, 보여 주는 칸 = 글자, 나머지 = '?'
     const show = (key: 'symbol' | 'name', el: HTMLElement, text: string) => {
       el.hidden = key === slot;
@@ -117,14 +135,13 @@ export function renderPlay(app: HTMLElement, lineId: string, modeId: string, par
       el.classList.toggle('q', hidden);
       el.textContent = hidden ? '?' : text;
     };
-    show('symbol', sEl, e.symbol);
-    show('name', kEl, e.name_ko);
-    const slotEl = $('slot');
+    show('symbol', sEl, e.s);
+    show('name', kEl, e.k);
     slotEl.style.order = slot === 'symbol' ? '1' : '3';
     input.className = slot === 'symbol' && keys.length === 1 ? 'big' : 'mid';
     // 연습 모드: 정답을 연한 글씨로 깔아 두고 따라 쓴다
     slotEl.className = `slot ${input.className}${mode!.ghost ? ' trace' : ''}`;
-    traceAnswer = mode!.ghost ? (slot === 'symbol' ? e.symbol : e.name_ko) : '';
+    traceAnswer = mode!.ghost ? (slot === 'symbol' ? e.s : e.k) : '';
     drawTrace();
     const kind = run.inputKind;
     const what = kind === 'auto' ? '기호 또는 이름' : slot === 'symbol' ? '기호' : '이름';
@@ -177,7 +194,7 @@ export function renderPlay(app: HTMLElement, lineId: string, modeId: string, par
     const e = stops[run.index];
     const r = run.skip();
     input.value = ''; drawTrace();
-    showToast(`정답은 ${e.symbol} · ${e.name_ko} (${r.reveal.join(' / ')})`, 'bad');
+    showToast(organ ? `정답은 ${e.k}` : `정답은 ${e.s} · ${e.k} (${r.reveal.join(' / ')})`, 'bad');
     if (r.finished) finish(); else drawStation();
   };
 
@@ -210,7 +227,7 @@ export function renderPlay(app: HTMLElement, lineId: string, modeId: string, par
     const res = run.result();
     addMisses(res.missed_station_ids);
     const saved = retry ? null : saveRun(line!.id, mode!.id, res);
-    renderResult(app, { line: line!, modeLabel: mode!.label, modeId: mode!.id, stops: routeStops, res, saved, retry });
+    renderResult(app, { svc, line: line!, modeLabel: mode!.label, modeId: mode!.id, stops: routeStops, res, saved, retry });
   }
 
   drawStation();
@@ -233,7 +250,7 @@ export function renderPlay(app: HTMLElement, lineId: string, modeId: string, par
 }
 
 interface ResultCtx {
-  line: Line; modeLabel: string; modeId: string; stops: ElementData[]; retry: boolean;
+  svc: Service; line: Line; modeLabel: string; modeId: string; stops: StopView[]; retry: boolean;
   res: ReturnType<Run['result']>; saved: ReturnType<typeof saveRun> | null;
 }
 
@@ -241,7 +258,7 @@ function renderResult(app: HTMLElement, c: ResultCtx) {
   const { line, res } = c;
   const color = lineColor(line.color);
   const last = c.stops[c.stops.length - 1];
-  const missed = res.missed_station_ids.map((id) => elementById.get(Number(id))!);
+  const missed = res.missed_station_ids.map((id) => stopView(line, id as StopId));
   const perfect = !missed.length;
   const stamps = [
     { got: true, label: '완주', ic: icon.flag },
@@ -250,7 +267,7 @@ function renderResult(app: HTMLElement, c: ResultCtx) {
   ];
   const lines = visibleLines(line.service_id);
   const next = lines[(lines.findIndex((l) => l.id === line.id) + 1) % lines.length];
-  const url = `${location.origin}/element/${line.id}?mode=${c.modeId}`;
+  const url = `${location.origin}/${c.svc.id}/${line.id}?mode=${c.modeId}`;
   let recNote = '';
   if (c.saved?.isBest) recNote = c.saved.prev ? `<span class="newrec">신기록 −${recTime(c.saved.prev.duration_ms - res.duration_ms)}</span>` : '<span class="newrec">첫 기록</span>';
   else if (c.saved?.prev) recNote = `<span class="caption sub num">최고 ${recTime(c.saved.prev.duration_ms)}</span>`;
@@ -258,7 +275,7 @@ function renderResult(app: HTMLElement, c: ResultCtx) {
 
   app.innerHTML = `<div class="result" style="--line:${color}">
     <div class="arrive" role="status">종착역 도착 · ${esc(line.name)}${c.retry ? ' (틀린 역)' : ''} · ${esc(c.modeLabel)}</div>
-    <div class="cur" style="--cat:var(--cat-${last.category});border-color:var(--line);box-shadow:none"><span class="n num">${last.id}</span><span class="s">${esc(last.symbol)}</span><span class="k">${esc(last.name_ko)}</span></div>
+    <div class="cur${last.s ? '' : ' organ'}" style="--cat:${last.tint};border-color:var(--line);box-shadow:none"><span class="n num">${last.n}</span>${last.s ? `<span class="s">${esc(last.s)}</span>` : ''}<span class="k">${esc(last.k)}</span>${last.desc ? `<span class="d">${esc(last.desc)}</span>` : ''}</div>
     <div class="stats">
       <div><span class="caption sub">시간</span><span class="title-m num">${recTime(res.duration_ms)}</span>${recNote}</div>
       <div><span class="caption sub">정확도</span><span class="title-m num">${pct(res.accuracy)}</span><span class="caption sub num">${res.first_try_correct} / ${res.total_stations}역 한 번에</span></div>
@@ -267,15 +284,15 @@ function renderResult(app: HTMLElement, c: ResultCtx) {
     <div class="stamps" aria-label="도장">${stamps.map((s, i) => `${i ? `<span class="bar ${s.got ? 'got' : ''}"></span>` : ''}<span class="st ${s.got ? 'got' : ''}"><span class="ring">${s.ic}</span>${s.label}</span>`).join('')}</div>
     <section class="review">
       ${perfect ? '<p class="label" style="text-align:center;margin:0">한 번도 틀리지 않고 종착역까지 왔어요.</p>'
-        : `<div class="label">다시 볼 역 ${missed.length}</div><div class="tiles">${missed.map((e) => `<div class="tile missed" style="--cat:var(--cat-${e.category})"><span class="n num">${e.id}</span><span class="s">${esc(e.symbol)}</span><span class="k">${esc(e.name_ko)}</span></div>`).join('')}</div>`}
+        : `<div class="label">다시 볼 역 ${missed.length}</div><div class="tiles">${missed.map((e) => tileHtml(e, 'missed', true, true)).join('')}</div>`}
     </section>
     <div class="actions">
       <button class="btn primary wide" data-act="again">다시 달리기</button>
       ${perfect ? '' : `<button class="btn wide" data-act="retry">틀린 역만 다시 달리기 (${missed.length})</button>`}
       <button class="btn" data-act="copy">기록 복사</button>
       <button class="btn" data-act="card">카드 저장</button>
-      <a class="btn" href="/element/${next.id}" data-link>다음 노선 · ${esc(next.name)}</a>
-      <a class="btn" href="/element" data-link>노선 고르기</a>
+      <a class="btn" href="/${c.svc.id}/${next.id}" data-link>다음 노선 · ${esc(next.name)}</a>
+      <a class="btn" href="/${c.svc.id}" data-link>노선 고르기</a>
     </div>
     <div class="toast" id="rtoast" role="status" aria-live="polite" hidden></div>
   </div>`;
@@ -283,21 +300,27 @@ function renderResult(app: HTMLElement, c: ResultCtx) {
   const say = (t: string) => { const el = app.querySelector<HTMLElement>('#rtoast')!; el.textContent = t; el.hidden = false; };
   app.querySelector('.actions')!.addEventListener('click', async (e) => {
     const act = (e.target as HTMLElement).closest<HTMLElement>('[data-act]')?.dataset.act;
-    if (act === 'again') navigate(`/element/${line.id}?mode=${c.modeId}`, true);
-    if (act === 'retry') navigate(`/element/${line.id}?mode=${c.modeId}&only=${missed.map((m) => m.id).join(',')}`);
+    if (act === 'again') navigate(`/${c.svc.id}/${line.id}?mode=${c.modeId}`, true);
+    if (act === 'retry') navigate(`/${c.svc.id}/${line.id}?mode=${c.modeId}&only=${missed.map((m) => m.id).join(',')}`);
     if (act === 'copy') {
-      const text = `Element_Metro ${line.name} · ${c.modeLabel}\n${res.total_stations}역 ${recTime(res.duration_ms)} · 정확도 ${pct(res.accuracy)}\n${url}\n#사이음 #Element_Metro`;
+      const text = `${c.svc.name} ${line.name} · ${c.modeLabel}\n${res.total_stations}역 ${recTime(res.duration_ms)} · 정확도 ${pct(res.accuracy)}\n${url}\n#사이음 #${c.svc.name}`;
       try { await navigator.clipboard.writeText(text); say('기록을 복사했어요.'); }
       catch { say('복사가 막혀 있어요. 길게 눌러 직접 복사해 주세요: ' + text); }
     }
     if (act === 'card') {
-      const blob = await drawCard({ line, modeLabel: c.modeLabel, stops: c.stops, res, missed: new Set(missed.map((m) => m.id)) });
+      const blob = await drawCard({ svc: c.svc, line, modeLabel: c.modeLabel, stops: c.stops, res, missed: new Set(missed.map((m) => m.id)) });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = `element-metro-${line.id}-${c.modeId}.png`;
+      a.download = `${c.svc.id}-metro-${line.id}-${c.modeId}.png`;
       a.click();
       setTimeout(() => URL.revokeObjectURL(a.href), 4000);
       say('결과 카드(1080×1920)를 저장했어요.');
     }
   });
+}
+
+/** 역 칸. 기호가 없는 역(기관)은 이름을 크게, 다시 볼 역에서는 하는 일도 */
+export function tileHtml(e: StopView, cls: string, showAll: boolean, withDesc = false) {
+  if (!e.s) return `<div class="tile organ ${cls}" style="--cat:${e.tint}">${e.n ? `<span class="n num">${e.n}</span>` : ''}<span class="k">${showAll ? esc(e.k) : '?'}</span>${withDesc && e.desc ? `<span class="dd">${esc(e.desc)}</span>` : ''}</div>`;
+  return `<div class="tile ${cls}" style="--cat:${e.tint}"><span class="n num">${e.n}</span><span class="s">${showAll ? esc(e.s) : '?'}</span><span class="k">${showAll ? esc(e.k) : '?'}</span></div>`;
 }

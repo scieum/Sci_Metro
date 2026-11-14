@@ -1,0 +1,9 @@
+{
+  "body": { "src": "/organism/body.png", "w": 688, "h": 1024 },
+  "heart": { "src": "/organism/heart.png", "w": 1024, "h": 1024 },
+  "kidney": { "src": "/organism/kidney.png", "w": 1024, "h": 1024 },
+  "eye": { "src": "/organism/eye.png", "w": 1024, "h": 688 },
+  "ear": { "src": "/organism/ear.png", "w": 1024, "h": 688 },
+  "neuron": { "src": "/organism/neuron.png", "w": 1024, "h": 688 },
+  "reflex": { "src": "/organism/reflex.png", "w": 1024, "h": 688 }
+}

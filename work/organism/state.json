@@ -1,6 +1,9 @@
 {
   "stage": "S4",
   "attempts": 0,
-  "passed": ["S2"],
+  "passed": [
+    "S2",
+    "S4"
+  ],
   "note": "S2 운영자 승인 2026-11-14. S3는 Science_Metro 공통 토큰 재사용(노선 색만 추가). G1·G2 스크립트 없음"
 }

@@ -18,5 +18,45 @@
   ],
   "level": 2,
   "status": "open",
-  "order": 110
+  "order": 110,
+  "scene": "neuron",
+  "route": [
+    [
+      90,
+      200,
+      "dendrite"
+    ],
+    [
+      150,
+      262
+    ],
+    [
+      205,
+      360,
+      "cell-body"
+    ],
+    [
+      330,
+      358
+    ],
+    [
+      530,
+      358,
+      "axon"
+    ],
+    [
+      740,
+      355
+    ],
+    [
+      855,
+      355,
+      "axon-terminal"
+    ],
+    [
+      905,
+      355,
+      "synaptic-cleft"
+    ]
+  ]
 }

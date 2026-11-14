@@ -1,5 +1,5 @@
-import { elementById, lineById, modes, services, visibleLines, type Line } from '../data';
-import { mapSvg } from '../map/periodic';
+import { lineById, modes, visibleLines, type Line, type Service } from '../data';
+import { lineMap } from '../map';
 import { bestOf, bestOfLine } from '../store';
 import { esc, icon, lineColor, navigate, recTime } from './util';
 
@@ -19,6 +19,11 @@ function modePic(id: string) {
   const mini = (n: string, s: string, k: string, d = 0, ghost = false) => `<span class="mini"><span class="caption sub">${n}</span>`
     + (s.startsWith('_') ? slot(s.slice(1), d, 'big') : `<b>${s}</b>`)
     + `<span class="caption">${k.startsWith('_') ? slot(k.slice(1), d, 'name', ghost) : k}</span></span>`;
+  // Organism_Metro: 위 = 순서, 가운데 = 하는 일(짧게), 아래 = 기관 이름
+  if (id === 'trace') return mini('3', '펩신', '_위', 0, true);
+  if (id === 'recall') return mini('3', '펩신', '_위');
+  if (id === 'sequence') return mini('3', '?', '_위');
+  if (id === 'scramble') return `<span class="minis">${mini('5', '물', '_대장', 0)}${mini('2', '연동', '_식도', 1)}</span>`;
   if (id === 'practice') return mini('9', 'F', '_플루오린', 0, true);
   if (id === 'name') return mini('9', 'F', '_플루오린');
   if (id === 'symbol') return mini('9', '_F', '플루오린');
@@ -72,10 +77,9 @@ function startTyping(root: HTMLElement): () => void {
 }
 
 function ticket(l: Line) {
-  const stops = l.station_ids.map((id) => elementById.get(id)!);
   const best = bestOfLine(l.id);
   return `<button class="ticket" data-line="${l.id}" aria-label="${esc(l.name)} 고르기">
-    <div class="map-wrap">${mapSvg({ stops, color: lineColor(l.color), compact: true, label: `${l.name} 모양` })}</div>
+    <div class="map-wrap">${lineMap(l, { compact: true, label: `${l.name} 모양` })}</div>
     <div class="row"><span class="dot" style="background:${lineColor(l.color)}"></span><span class="label">${esc(l.name)}</span>${levelDots(l.level)}
       <span class="best">${best ? `<span class="done">완주</span> · <span class="num">${recTime(best.duration_ms)}</span>` : ''}</span></div>
     <div class="caption sub">${esc(l.subtitle)} · ${l.station_ids.length}역 · ${esc(l.description)}</div>
@@ -83,29 +87,25 @@ function ticket(l: Line) {
 }
 
 /**
- * Element_Metro 둘러보기 탭: 족·구간 노선 | 주기선 | 주기율표 학습 (운영자 요청).
- * 노선 묶음은 같은 화면에서 바뀌고, 주기율표 학습은 /element/table 로 간다.
+ * 서비스 둘러보기 탭: 노선 묶음(services.json groups) + 학습 페이지(study, 있을 때만).
+ * 노선 묶음은 같은 화면에서 바뀌고, 학습 페이지는 /<서비스>/<study.path> 로 간다.
  */
-export function serviceTabs(groups: Array<{ id: string; label: string }>, active: string) {
-  return `<nav class="seg" aria-label="Element_Metro 둘러보기">${groups.map((g) => active === 'table'
-    ? `<a href="/element?tab=${g.id}" data-link>${esc(g.label)}</a>`
+export function serviceTabs(svc: Service, groups: Array<{ id: string; label: string }>, active: string) {
+  return `<nav class="seg" aria-label="${esc(svc.name)} 둘러보기">${groups.map((g) => active === 'table'
+    ? `<a href="/${svc.id}?tab=${g.id}" data-link>${esc(g.label)}</a>`
     : `<button data-tab="${g.id}" aria-pressed="${g.id === active}">${esc(g.label)}</button>`).join('')}`
-    + `<a href="/element/table" data-link ${active === 'table' ? 'aria-current="page"' : ''}>${icon.grid} 주기율표 학습</a></nav>`;
+    + (svc.study ? `<a href="/${svc.id}/${svc.study.path}" data-link ${active === 'table' ? 'aria-current="page"' : ''}>${icon.grid} ${esc(svc.study.label)}</a>` : '') + '</nav>';
 }
 
-export function renderLines(main: HTMLElement, openLine?: string, preview = false) {
-  const svc = services[0];
+export function renderLines(main: HTMLElement, svc: Service, openLine?: string, preview = false) {
   const all = visibleLines(svc.id, preview);
-  const groups = [
-    { id: 'zone', label: '족·구간 노선' },
-    { id: 'period', label: '주기선' },
-  ].map((g) => ({ ...g, lines: all.filter((l) => l.group === g.id) })).filter((g) => g.lines.length);
+  const groups = svc.groups.map((g) => ({ ...g, lines: all.filter((l) => l.group === g.id) })).filter((g) => g.lines.length);
   const asked = new URL(location.href).searchParams.get('tab');
   let tab = groups.find((g) => g.lines.some((l) => l.id === openLine))?.id ?? groups.find((g) => g.id === asked)?.id ?? groups[0].id;
 
   main.innerHTML = `
     <div class="lines-head"><div><div class="caption-strong sub">${esc(svc.name)}</div><h1 class="title-l h1">어느 노선을 탈까요?</h1></div></div>
-    ${serviceTabs(groups.map((g) => ({ id: g.id, label: `${g.label} ${g.lines.length}` })), tab)}
+    ${serviceTabs(svc, groups.map((g) => ({ id: g.id, label: `${g.label} ${g.lines.length}` })), tab)}
     <div class="tickets" id="tickets"></div>
     <dialog class="sheet" id="modeSheet" aria-labelledby="sheetTitle"></dialog>`;
 
@@ -123,7 +123,7 @@ export function renderLines(main: HTMLElement, openLine?: string, preview = fals
   const sheet = main.querySelector<HTMLDialogElement>('#modeSheet')!;
   let stopTyping: () => void = () => {};
   const openSheet = (l: Line) => {
-    let mode = svc.modes.includes(lastMode()) ? lastMode() : svc.modes[0];
+    let mode = svc.modes.includes(lastMode()) ? lastMode() : svc.modes[1] ?? svc.modes[0];
     const draw = () => {
       const m = modes.find((x) => x.id === mode)!;
       sheet.innerHTML = `<div class="sheet-in">
@@ -157,11 +157,11 @@ export function renderLines(main: HTMLElement, openLine?: string, preview = fals
       if (t.closest('[data-start]')) {
         try { localStorage.setItem(LAST_MODE, mode); } catch { /* 저장 막힘 */ }
         sheet.close();
-        navigate(`/element/${l.id}?mode=${mode}${preview ? '&preview=1' : ''}`);
+        navigate(`/${svc.id}/${l.id}?mode=${mode}${preview ? '&preview=1' : ''}`);
       }
     };
-    sheet.onclose = () => { stopTyping(); if (location.pathname !== '/element' && !location.search.includes('mode=')) history.replaceState(null, '', '/element'); };
-    if (location.pathname !== `/element/${l.id}`) history.pushState(null, '', `/element/${l.id}`);
+    sheet.onclose = () => { stopTyping(); if (location.pathname !== `/${svc.id}` && !location.search.includes('mode=')) history.replaceState(null, '', `/${svc.id}`); };
+    if (location.pathname !== `/${svc.id}/${l.id}`) history.pushState(null, '', `/${svc.id}/${l.id}`);
     sheet.showModal();
     // 처음 열 때만 카드가 차례로 나타난다 (모드를 바꿔 다시 그릴 때는 생략)
     sheet.classList.add('opening');

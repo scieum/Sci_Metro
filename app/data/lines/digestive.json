@@ -1,0 +1,23 @@
+{
+  "id": "digestive",
+  "service_id": "organism",
+  "name": "소화선",
+  "subtitle": "입 → 항문",
+  "color": "line-digestive",
+  "description": "음식물이 지나가는 소화관",
+  "station_ids": [
+    "mouth",
+    "esophagus",
+    "stomach",
+    "small-intestine",
+    "large-intestine",
+    "anus"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "중2 동물과 에너지"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 101
+}

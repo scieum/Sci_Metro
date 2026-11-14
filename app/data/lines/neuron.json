@@ -1,0 +1,22 @@
+{
+  "id": "neuron",
+  "service_id": "organism",
+  "name": "뉴런선",
+  "subtitle": "가지 돌기 → 시냅스 틈",
+  "color": "line-neuron",
+  "description": "뉴런 하나를 지나는 흥분",
+  "station_ids": [
+    "dendrite",
+    "cell-body",
+    "axon",
+    "axon-terminal",
+    "synaptic-cleft"
+  ],
+  "group": "advanced",
+  "curriculum": [
+    "생명과학Ⅰ"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 110
+}

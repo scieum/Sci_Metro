@@ -1,0 +1,27 @@
+{
+  "id": "circulation",
+  "service_id": "organism",
+  "name": "순환선",
+  "subtitle": "우심실 → 우심방",
+  "color": "line-circulation",
+  "description": "폐순환과 온몸 순환을 한 바퀴",
+  "station_ids": [
+    "right-ventricle",
+    "pulmonary-artery",
+    "lung-capillary",
+    "pulmonary-vein",
+    "left-atrium",
+    "left-ventricle",
+    "aorta",
+    "body-capillary",
+    "vena-cava",
+    "right-atrium"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "중2 동물과 에너지"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 102
+}

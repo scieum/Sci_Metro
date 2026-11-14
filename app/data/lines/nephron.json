@@ -1,0 +1,28 @@
+{
+  "id": "nephron",
+  "service_id": "organism",
+  "name": "네프론선",
+  "subtitle": "콩팥 동맥 → 요도",
+  "color": "line-nephron",
+  "description": "여과 · 재흡수 · 분비를 세뇨관 부분별로",
+  "station_ids": [
+    "renal-artery",
+    "glomerulus",
+    "bowmans-capsule",
+    "proximal-tubule",
+    "loop-of-henle",
+    "distal-tubule",
+    "collecting-duct",
+    "renal-pelvis",
+    "ureter",
+    "bladder",
+    "urethra"
+  ],
+  "group": "advanced",
+  "curriculum": [
+    "생명과학Ⅰ"
+  ],
+  "level": 3,
+  "status": "open",
+  "order": 109
+}

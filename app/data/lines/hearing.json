@@ -1,0 +1,24 @@
+{
+  "id": "hearing",
+  "service_id": "organism",
+  "name": "청각선",
+  "subtitle": "귓바퀴 → 대뇌",
+  "color": "line-hearing",
+  "description": "소리가 귀에 들어와 들리기까지",
+  "station_ids": [
+    "auricle",
+    "ear-canal",
+    "eardrum",
+    "ossicles",
+    "cochlea",
+    "auditory-nerve",
+    "cerebrum"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "중3 자극과 반응"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 108
+}

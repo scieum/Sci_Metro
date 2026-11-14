@@ -1,0 +1,22 @@
+{
+  "id": "reflex-arc",
+  "service_id": "organism",
+  "name": "반사궁선",
+  "subtitle": "감각기 → 운동 기관",
+  "color": "line-reflex-arc",
+  "description": "뉴런 세 개로 잇는 무릎 반사",
+  "station_ids": [
+    "receptor",
+    "sensory-neuron",
+    "interneuron",
+    "motor-neuron",
+    "effector"
+  ],
+  "group": "advanced",
+  "curriculum": [
+    "생명과학Ⅰ"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 111
+}

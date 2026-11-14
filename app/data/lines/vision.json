@@ -1,0 +1,24 @@
+{
+  "id": "vision",
+  "service_id": "organism",
+  "name": "시각선",
+  "subtitle": "각막 → 대뇌",
+  "color": "line-vision",
+  "description": "빛이 눈에 들어와 보이기까지",
+  "station_ids": [
+    "cornea",
+    "pupil",
+    "lens",
+    "vitreous",
+    "retina",
+    "optic-nerve",
+    "cerebrum"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "중3 자극과 반응"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 107
+}

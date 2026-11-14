@@ -1,0 +1,22 @@
+{
+  "id": "reaction",
+  "service_id": "organism",
+  "name": "반응선",
+  "subtitle": "감각기 → 운동 기관",
+  "color": "line-reaction",
+  "description": "대뇌가 판단하는 의식적 반응",
+  "station_ids": [
+    "receptor",
+    "sensory-nerve",
+    "cerebrum",
+    "motor-nerve",
+    "effector"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "중3 자극과 반응"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 105
+}

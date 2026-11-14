@@ -1,0 +1,29 @@
+{
+  "id": "oxygen",
+  "service_id": "organism",
+  "name": "산소 여행선",
+  "subtitle": "코 → 미토콘드리아",
+  "color": "line-oxygen",
+  "description": "호흡계 · 순환계를 지나 세포 호흡까지",
+  "station_ids": [
+    "nose",
+    "trachea",
+    "bronchus",
+    "alveolus",
+    "lung-capillary",
+    "pulmonary-vein",
+    "left-atrium",
+    "left-ventricle",
+    "aorta",
+    "body-capillary",
+    "tissue-cell",
+    "mitochondrion"
+  ],
+  "group": "advanced",
+  "curriculum": [
+    "생명과학Ⅰ"
+  ],
+  "level": 3,
+  "status": "open",
+  "order": 112
+}

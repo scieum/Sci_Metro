@@ -1,0 +1,22 @@
+{
+  "id": "respiration",
+  "service_id": "organism",
+  "name": "호흡선",
+  "subtitle": "코 → 폐 모세 혈관",
+  "color": "line-respiration",
+  "description": "들이마신 산소가 혈액에 닿기까지",
+  "station_ids": [
+    "nose",
+    "trachea",
+    "bronchus",
+    "alveolus",
+    "lung-capillary"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "중2 동물과 에너지"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 103
+}

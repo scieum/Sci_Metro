@@ -1,0 +1,22 @@
+{
+  "id": "reflex",
+  "service_id": "organism",
+  "name": "반사선",
+  "subtitle": "감각기 → 운동 기관",
+  "color": "line-reflex",
+  "description": "척수가 바로 명령하는 무조건 반사",
+  "station_ids": [
+    "receptor",
+    "sensory-nerve",
+    "spinal-cord",
+    "motor-nerve",
+    "effector"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "중3 자극과 반응"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 106
+}

@@ -5,6 +5,7 @@ import { elementById, lineById, lineStations, modeById, services, toStation, vis
 import { typingSteps } from '../src/ui/lines';
 import { boxes, configuration, shells, subText } from '../src/map/electrons';
 import { checkData } from '../scripts/check-data.mjs';
+import { cropOf, zoomOf } from '../src/map/organ';
 import path from 'node:path';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -244,6 +245,22 @@ describe('Organism_Metro', () => {
     expect(r.station.fields.order).toBe('1');
     r.submit('입');
     expect(r.station.fields.order).toBe('2');
+  });
+  it('확대: 모든 노선 모든 역에서 이번 역이 정중앙, 다음 역이 화면 안', () => {
+    const inside = (q: number[], z: { x: number; y: number; w: number; h: number }) => q[0] > z.x && q[0] < z.x + z.w && q[1] > z.y && q[1] < z.y + z.h;
+    let zoomed = 0, total = 0;
+    for (const l of visibleLines('organism')) {
+      const route = l.route!, full = cropOf(route, 480, 340, 70);
+      const stops = route.filter((p) => p[2]);
+      stops.forEach((p, k) => {
+        const z = zoomOf(route, p[2], full, 480, 340);
+        total++; if (z.w < full.w) zoomed++;
+        expect(z.x + z.w / 2).toBeCloseTo(p[0]);
+        expect(z.y + z.h / 2).toBeCloseTo(p[1]);
+        if (stops[k + 1]) expect(inside(stops[k + 1], z)).toBe(true);
+      });
+    }
+    expect(zoomed / total).toBeGreaterThan(0.75); // 대부분의 역에서 실제로 확대된다
   });
   it('모든 노선의 역이 기관 데이터에 있고 장면 위 경로를 가진다', () => {
     for (const l of visibleLines('organism')) {

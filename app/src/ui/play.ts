@@ -2,6 +2,7 @@ import { lineById, lineStations, modeById, stopView, visibleLines, type Line, ty
 import { Run } from '../engine/run';
 import type { Judgement } from '../engine/types';
 import { lineMap } from '../map';
+import { tweenViewBox } from '../map/organ';
 import { addMisses, bestOf, saveRun } from '../store';
 import { drawCard } from './card';
 import { esc, icon, lineColor, navigate, pct, recTime } from './util';
@@ -95,9 +96,7 @@ export function renderPlay(app: HTMLElement, svc: Service, lineId: string, modeI
     $('remain').textContent = i >= n - 1 ? '이번 역이 종착역' : `종착역까지 ${n - 1 - i}역`;
     $('progress').innerHTML = stops.map((_, k) => `<i class="${k < i ? (run.firstTry(k) ? 'pass' : 'miss') : k === i ? 'now' : ''}"></i>`).join('');
     const label = `${line!.name} 노선도, ${i + 1}번째 역`;
-    $('map').innerHTML = mode!.shuffle
-      ? lineMap(line!, { ids: routeIds, currentId: stops[i].id, passed: new Set(stops.slice(0, i).map((s) => s.id)), missed: missedSoFar(), label })
-      : lineMap(line!, { ids: routeIds, index: i, missed: missedSoFar(), label });
+    drawMap(i, label);
     const dist = (d: number) => `d${d}${d === 2 ? ' far' : d === 3 ? ' farther' : ''}`;
     $('prev').innerHTML = [1, 2, 3].filter((d) => i - d >= 0).map((d) => tile(stops[i - d], `${dist(d)}${run.firstTry(i - d) ? '' : ' missed'}`, true)).join('');
     $('next').innerHTML = [1, 2, 3].filter((d) => i + d < n).map((d) => tile(stops[i + d], `next ${dist(d)}`, false)).join('');
@@ -184,6 +183,20 @@ export function renderPlay(app: HTMLElement, svc: Service, lineId: string, modeI
 
   // 3 · 2 · 1 · 출발! 전에는 입력을 받지 않는다 (운영자 요청: 시계는 '출발!'부터)
   let ready = false;
+
+  // 몸 지도: 카운트다운 동안은 노선 전체, '출발!'부터 이번 역으로 확대하고 역이 바뀌면 카메라가 따라간다
+  let prevView: string | null = null;
+  function drawMap(i: number, label: string) {
+    const zoom = ready;
+    $('map').innerHTML = mode!.shuffle
+      ? lineMap(line!, { ids: routeIds, currentId: stops[i].id, passed: new Set(stops.slice(0, i).map((s) => s.id)), missed: missedSoFar(), label, zoom })
+      : lineMap(line!, { ids: routeIds, index: i, missed: missedSoFar(), label, zoom });
+    const svg = $('map').querySelector<SVGSVGElement>('svg.omap');
+    if (!svg) return;
+    const view = svg.getAttribute('viewBox');
+    if (prevView) tweenViewBox(svg, prevView, zoom && i === 0 ? 900 : 480);
+    prevView = view;
+  }
   const onInput = () => {
     if (!ready) { if (!composing) input.value = ''; return; }
     if (!composing && !finished) after(run.type(input.value));
@@ -241,6 +254,7 @@ export function renderPlay(app: HTMLElement, svc: Service, lineId: string, modeI
     if (i === 3) {
       ready = true;
       input.value = ''; drawTrace();
+      drawMap(run.index, `${line!.name} 노선도, ${run.index + 1}번째 역`);
       run.start();
       input.focus();
       cdTimers.push(window.setTimeout(() => cdBox.classList.add('done'), 600));

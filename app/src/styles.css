@@ -189,13 +189,15 @@ dialog.sheet::backdrop { background: rgba(17, 19, 24, .45); }
 .cur.ok { border-color: var(--success); } .cur.ok input { border-color: var(--success); }
 .cur.shake { animation: shake .32s; }
 /* Organism: 기호 대신 하는 일 문장. 카드가 넓고 이름칸은 아래 */
-.cur.organ { width: min(240px, 62vw); gap: 10px; }
+/* 모바일: 양옆 역 칸(56) 2개 + 간격 + 여백을 빼고 남는 폭 → 390px에서 가로로 넘치지 않는다 */
+.cur.organ { width: min(240px, calc(100vw - 176px)); gap: 10px; }
 .cur.organ .n { font-size: 12px; }
 .cur .d { font-size: 16px; font-weight: 700; line-height: 1.45; text-align: center; word-break: keep-all; }
 .cur .d.q { color: var(--text-disabled); }
 @media (min-width: 768px) { .cur.organ { width: 340px; } .cur .d { font-size: 20px; } }
-.tile.organ { width: 72px; }
-.tile.organ .k { font-size: 14px; font-weight: 700; color: var(--text); white-space: normal; word-break: keep-all; text-align: center; }
+.tile.organ { width: 56px; }
+@media (min-width: 768px) { .tile.organ { width: 72px; } .tile.organ .k { font-size: 14px; } }
+.tile.organ .k { font-size: 12px; font-weight: 700; color: var(--text); white-space: normal; word-break: keep-all; text-align: center; }
 .tile.organ.next .k { font-size: 20px; color: var(--text-disabled); }
 .review .tile.organ { width: auto; max-width: 240px; align-items: flex-start; padding: 8px 12px; }
 .tile .dd { font-size: 12px; color: var(--text-sub); line-height: 1.4; word-break: keep-all; }

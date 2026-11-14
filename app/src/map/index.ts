@@ -11,6 +11,7 @@ export interface LineMapOptions {
   missed?: Set<StopId>;
   compact?: boolean;
   label?: string;
+  zoom?: boolean; // 몸 지도만: 이번 역으로 확대
 }
 
 export function lineMap(line: Line, o: LineMapOptions = {}): string {

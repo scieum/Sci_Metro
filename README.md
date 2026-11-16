@@ -1,4 +1,4 @@
-# Science_Metro · Element_Metro · Organism_Metro
+# Science_Metro · Element_Metro · Organism_Metro · IUPAC_Metro
 
 외우기 어려운 과학 지식, 타이핑하며 배워 봐요.
 
@@ -36,6 +36,17 @@
 - 다른 이름도 정답으로 받아요(작은창자 → 소장, 신장 동맥 → 콩팥 동맥, 수뇨관 → 오줌관 등).
 - 새 노선 = `app/data/lines/<id>.json`에 `service_id: "organism"`, `scene`(장면 그림), `route`(그림 위 좌표, 역은 `[x, y, "기관 id"]`). 기관은 `app/data/organs.json`.
 - 기관 설명·그림 속 역 위치는 아직 교사 검수 전이에요.
+
+### IUPAC_Metro (`/iupac`)
+
+분자 하나가 역 하나예요. 역마다 **입체 공-막대 모형**이 크게 나오고, 분자 이름(한글)을 써요.
+
+- **노선 10개**: 고등학교 포화탄화수소선(탄소 1~10개) · 알코올선 · 카보닐선(알데하이드·케톤·카복실산·에스터) · 벤젠 고리선 · 혼합선 / 어려운 분자 — 같은 주제의 심화선 5개(가지·고리, -OH 위치, 시스·트랜스, 치환기 위치 등).
+- **모드 3개**: 연습(모형 보고 연한 이름 따라 쓰기) · 이름 쓰기 · 섞어 쓰기(역 순서 섞임).
+- 이름은 대한화학회 표기가 정답, 관용명도 정답으로 받아요(에탄산 → 아세트산, 프로판온 → 아세톤 등).
+- 분자는 `app/data/molecules.json`(이름·별칭·SMILES). 그림은 `app/public/molecule/<id>.svg`이고 `python app/scripts/draw-molecules.py`로 다시 만들어요(RDKit 필요: `pip install rdkit`, 앱 빌드에는 필요 없음).
+- 새 노선 = `app/data/lines/<id>.json`에 `service_id: "iupac"`, `featured`(승차권에 보일 대표 분자 3개).
+- 분자 이름 표기는 아직 교과서 대조 전이에요.
 
 ## 실행하기
 

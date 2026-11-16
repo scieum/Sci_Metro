@@ -12,6 +12,8 @@ const norm = (s) => String(s ?? '').replace(/\s+/g, '');
 const STATIONS = {
   element: { file: 'stations.json', name: (s) => s.name_ko, aliases: (s) => s.aliases_ko, required: { symbol: '기호', name_ko: '이름' } },
   organism: { file: 'organs.json', name: (s) => s.name, aliases: (s) => s.aliases, required: { name: '이름', desc: '하는 일' } },
+  iupac: { file: 'molecules.json', name: (s) => s.name, aliases: (s) => s.aliases, required: { name: '이름', smiles: '구조(SMILES)' },
+    image: (s) => `molecule/${s.id}.svg` }, // public/ 아래 그림 (scripts/draw-molecules.py로 만든다)
 };
 
 function checkStations(file, list, spec, errors) {
@@ -49,7 +51,15 @@ export function checkData(dir) {
     if (!spec) { errors.push(`services.json: ${svc.id}의 역 파일을 check-data.mjs STATIONS에 등록하지 않음`); continue; }
     const p = path.join(dir, spec.file);
     if (!fs.existsSync(p)) { if (svc.status === 'open') errors.push(`${spec.file} 없음 (${svc.id})`); continue; }
-    idsBySvc.set(svc.id, checkStations(spec.file, read(p), spec, errors));
+    const list = read(p);
+    idsBySvc.set(svc.id, checkStations(spec.file, list, spec, errors));
+    if (spec.image) for (const st of list) if (!fs.existsSync(path.join(dir, '..', 'public', spec.image(st)))) errors.push(`${spec.file}: ${st.id} 그림 없음 (public/${spec.image(st)})`);
+  }
+  // 내 기록의 '자주 틀린 역'은 id만으로 역을 찾는다 → 서비스끼리 문자열 id가 겹치면 안 된다
+  const owner = new Map();
+  for (const [svc, ids] of idsBySvc) for (const id of ids) {
+    if (owner.has(String(id))) errors.push(`역 id '${id}'가 ${owner.get(String(id))}와 ${svc}에 모두 있음`);
+    owner.set(String(id), svc);
   }
 
   const lineIds = new Set();
@@ -69,6 +79,7 @@ export function checkData(dir) {
       seen.add(id);
     }
     if (!(l.station_ids ?? []).length) errors.push(`lines/${l.file}: 역이 없음`);
+    for (const id of l.featured ?? []) if (!seen.has(id)) errors.push(`lines/${l.file}: 대표 역 ${id}이 노선에 없음`);
     // 몸 지도: 장면이 있어야 하고, 경로 위 역 순서 = station_ids
     if (l.scene !== undefined || l.route !== undefined) {
       const sc = scenes[l.scene];

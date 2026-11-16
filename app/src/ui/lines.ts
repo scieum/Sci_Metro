@@ -24,6 +24,11 @@ function modePic(id: string) {
   if (id === 'recall') return mini('3', '펩신', '_위');
   if (id === 'sequence') return mini('3', '?', '_위');
   if (id === 'scramble') return `<span class="minis">${mini('5', '물', '_대장', 0)}${mini('2', '연동', '_식도', 1)}</span>`;
+  // IUPAC_Metro: 위 = 순서, 가운데 = 분자 모형, 아래 = 이름
+  const mol = (m: string) => `<img src="/molecule/${m}.svg" alt="" style="height:28px;width:auto;max-width:100%">`;
+  if (id === 'mol-trace') return mini('2', mol('ethanol'), '_에탄올', 0, true);
+  if (id === 'mol-recall') return mini('2', mol('ethanol'), '_에탄올');
+  if (id === 'mol-scramble') return `<span class="minis">${mini('5', mol('ethanoic-acid'), '_에탄산', 0)}${mini('1', mol('methanol'), '_메탄올', 1)}</span>`;
   if (id === 'practice') return mini('9', 'F', '_플루오린', 0, true);
   if (id === 'name') return mini('9', 'F', '_플루오린');
   if (id === 'symbol') return mini('9', '_F', '플루오린');

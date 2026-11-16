@@ -1,0 +1,30 @@
+{
+  "id": "benzene-hard",
+  "service_id": "iupac",
+  "name": "벤젠 고리 심화선",
+  "subtitle": "1,2-다이메틸벤젠 → 아세틸살리실산",
+  "color": "line-benzene-hard",
+  "description": "치환기 위치와 여러 고리",
+  "station_ids": [
+    "1,2-dimethylbenzene",
+    "1,4-dimethylbenzene",
+    "nitrobenzene",
+    "aniline",
+    "styrene",
+    "benzaldehyde",
+    "naphthalene",
+    "aspirin"
+  ],
+  "group": "advanced",
+  "curriculum": [
+    "심화"
+  ],
+  "level": 3,
+  "status": "open",
+  "order": 213,
+  "featured": [
+    "nitrobenzene",
+    "naphthalene",
+    "aspirin"
+  ]
+}

@@ -4,8 +4,14 @@
     "label": "연습",
     "level": 0,
     "desc": "연한 이름을 따라 써요 · Enter",
-    "prompts": ["symbol"],
-    "answers": { "symbol": ["name"] },
+    "prompts": [
+      "symbol"
+    ],
+    "answers": {
+      "symbol": [
+        "name"
+      ]
+    },
     "ghost": true
   },
   {
@@ -13,24 +19,42 @@
     "label": "이름 쓰기",
     "level": 1,
     "desc": "기호를 보고 이름 · Enter",
-    "prompts": ["symbol"],
-    "answers": { "symbol": ["name"] }
+    "prompts": [
+      "symbol"
+    ],
+    "answers": {
+      "symbol": [
+        "name"
+      ]
+    }
   },
   {
     "id": "symbol",
     "label": "기호 쓰기",
     "level": 1,
     "desc": "이름을 보고 기호 · Enter",
-    "prompts": ["name"],
-    "answers": { "name": ["symbol"] }
+    "prompts": [
+      "name"
+    ],
+    "answers": {
+      "name": [
+        "symbol"
+      ]
+    }
   },
   {
     "id": "number",
     "label": "번호 쓰기",
     "level": 2,
     "desc": "번호를 보고 기호 · 역 순서가 섞여 나와요",
-    "prompts": ["number"],
-    "answers": { "number": ["symbol"] },
+    "prompts": [
+      "number"
+    ],
+    "answers": {
+      "number": [
+        "symbol"
+      ]
+    },
     "shuffle": true
   },
   {
@@ -38,8 +62,18 @@
     "label": "혼합",
     "level": 2,
     "desc": "이름 ↔ 기호가 섞여 나와요",
-    "prompts": ["name", "symbol"],
-    "answers": { "name": ["symbol"], "symbol": ["name"] },
+    "prompts": [
+      "name",
+      "symbol"
+    ],
+    "answers": {
+      "name": [
+        "symbol"
+      ],
+      "symbol": [
+        "name"
+      ]
+    },
     "max_run": 3
   },
   {
@@ -47,8 +81,23 @@
     "label": "완전 혼합",
     "level": 3,
     "desc": "이름 · 기호 · 번호가 섞여 나와요",
-    "prompts": ["name", "symbol", "number"],
-    "answers": { "name": ["symbol"], "symbol": ["name"], "number": ["symbol", "name"] },
+    "prompts": [
+      "name",
+      "symbol",
+      "number"
+    ],
+    "answers": {
+      "name": [
+        "symbol"
+      ],
+      "symbol": [
+        "name"
+      ],
+      "number": [
+        "symbol",
+        "name"
+      ]
+    },
     "max_run": 3
   },
   {
@@ -56,8 +105,14 @@
     "label": "연습",
     "level": 0,
     "desc": "설명을 보고 연한 이름을 따라 써요",
-    "prompts": ["desc"],
-    "answers": { "desc": ["name"] },
+    "prompts": [
+      "desc"
+    ],
+    "answers": {
+      "desc": [
+        "name"
+      ]
+    },
     "ghost": true
   },
   {
@@ -65,24 +120,86 @@
     "label": "이름 쓰기",
     "level": 1,
     "desc": "하는 일을 보고 기관 이름 · Enter",
-    "prompts": ["desc"],
-    "answers": { "desc": ["name"] }
+    "prompts": [
+      "desc"
+    ],
+    "answers": {
+      "desc": [
+        "name"
+      ]
+    }
   },
   {
     "id": "sequence",
     "label": "순서 쓰기",
     "level": 2,
     "desc": "설명 없이 노선도만 보고 다음 역",
-    "prompts": ["order"],
-    "answers": { "order": ["name"] }
+    "prompts": [
+      "order"
+    ],
+    "answers": {
+      "order": [
+        "name"
+      ]
+    }
   },
   {
     "id": "scramble",
     "label": "섞어 쓰기",
     "level": 3,
     "desc": "하는 일을 보고 이름 · 역 순서가 섞여 나와요",
-    "prompts": ["desc"],
-    "answers": { "desc": ["name"] },
+    "prompts": [
+      "desc"
+    ],
+    "answers": {
+      "desc": [
+        "name"
+      ]
+    },
+    "shuffle": true
+  },
+  {
+    "id": "mol-trace",
+    "label": "연습",
+    "level": 0,
+    "desc": "모형을 보고 연한 이름을 따라 써요",
+    "prompts": [
+      "model"
+    ],
+    "answers": {
+      "model": [
+        "name"
+      ]
+    },
+    "ghost": true
+  },
+  {
+    "id": "mol-recall",
+    "label": "이름 쓰기",
+    "level": 1,
+    "desc": "모형을 보고 분자 이름 · Enter",
+    "prompts": [
+      "model"
+    ],
+    "answers": {
+      "model": [
+        "name"
+      ]
+    }
+  },
+  {
+    "id": "mol-scramble",
+    "label": "섞어 쓰기",
+    "level": 2,
+    "desc": "모형을 보고 이름 · 역 순서가 섞여 나와요",
+    "prompts": [
+      "model"
+    ],
+    "answers": {
+      "model": [
+        "name"
+      ]
+    },
     "shuffle": true
   }
 ]

@@ -1,0 +1,32 @@
+{
+  "id": "alkane",
+  "service_id": "iupac",
+  "name": "포화탄화수소선",
+  "subtitle": "메테인 → 데케인",
+  "color": "line-alkane",
+  "description": "탄소 1~10개 사슬",
+  "station_ids": [
+    "methane",
+    "ethane",
+    "propane",
+    "butane",
+    "pentane",
+    "hexane",
+    "heptane",
+    "octane",
+    "nonane",
+    "decane"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "고등학교 화학"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 200,
+  "featured": [
+    "methane",
+    "propane",
+    "hexane"
+  ]
+}

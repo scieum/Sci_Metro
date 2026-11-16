@@ -1,0 +1,27 @@
+{
+  "id": "carbonyl-hard",
+  "service_id": "iupac",
+  "name": "카보닐 심화선",
+  "subtitle": "프로판알 → 에탄아마이드",
+  "color": "line-carbonyl-hard",
+  "description": "탄소 수와 작용기 위치",
+  "station_ids": [
+    "propanal",
+    "butanone",
+    "propanoic-acid",
+    "methyl-ethanoate",
+    "ethanamide"
+  ],
+  "group": "advanced",
+  "curriculum": [
+    "심화"
+  ],
+  "level": 3,
+  "status": "open",
+  "order": 212,
+  "featured": [
+    "butanone",
+    "propanoic-acid",
+    "ethanamide"
+  ]
+}

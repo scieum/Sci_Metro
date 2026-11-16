@@ -1,0 +1,27 @@
+{
+  "id": "benzene",
+  "service_id": "iupac",
+  "name": "벤젠 고리선",
+  "subtitle": "벤젠 → 클로로벤젠",
+  "color": "line-benzene",
+  "description": "벤젠 고리가 있는 분자",
+  "station_ids": [
+    "benzene",
+    "methylbenzene",
+    "phenol",
+    "benzoic-acid",
+    "chlorobenzene"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "고등학교 화학"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 203,
+  "featured": [
+    "benzene",
+    "methylbenzene",
+    "phenol"
+  ]
+}

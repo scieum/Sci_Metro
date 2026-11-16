@@ -26,6 +26,7 @@ export async function drawCard(o: { svc: Service; line: Line; modeLabel: string;
   g.fillStyle = '#6b7280'; g.font = font(400, 40); g.fillText(`${o.line.subtitle} · ${o.res.total_stations}역 · ${o.modeLabel}`, 84, 410);
 
   if (o.line.scene && o.line.route) await drawScene(g, o.line, lineCol, o.missed, W);
+  else if (o.line.service_id === 'iupac') await drawMolecules(g, o.stops, lineCol, o.missed, W);
   else drawTable(g, o.stops.map((s) => elementById.get(Number(s.id))!), lineCol, o.missed, W);
   drawRecord(g, o, W, H, font);
   return new Promise((ok, fail) => cv.toBlob((b) => (b ? ok(b) : fail(new Error('toBlob 실패'))), 'image/png'));
@@ -55,6 +56,28 @@ async function drawScene(g: CanvasRenderingContext2D, line: Line, lineCol: strin
     g.lineWidth = 5; g.strokeStyle = miss ? '#e03131' : '#ffffff'; g.stroke();
   }
   g.restore();
+}
+
+/** 분자 모형을 역 순서대로 칸에 (틀린 역은 빨간 테두리) */
+async function drawMolecules(g: CanvasRenderingContext2D, stops: StopView[], lineCol: string, missed: Set<StopId>, W: number) {
+  const box = { x: 80, y: 480, w: W - 160, h: 600 }, n = stops.length;
+  const cols = Math.ceil(Math.sqrt((n * box.w) / box.h)), rows = Math.ceil(n / cols);
+  const cw = box.w / cols, ch = box.h / rows, G = 10;
+  const imgs = await Promise.all(stops.map(async (s) => {
+    const img = new Image(); img.src = s.img!;
+    try { await img.decode(); return img; } catch { return null; } // 그림을 못 불러오면 칸만
+  }));
+  stops.forEach((s, i) => {
+    const x = box.x + (i % cols) * cw + G / 2, y = box.y + Math.floor(i / cols) * ch + G / 2, w = cw - G, h = ch - G;
+    const miss = missed.has(s.id);
+    g.fillStyle = '#ffffff'; g.lineWidth = miss ? 6 : 3; g.strokeStyle = miss ? '#e03131' : lineCol;
+    g.beginPath(); g.roundRect(x, y, w, h, 16); g.fill(); g.stroke();
+    const img = imgs[i];
+    if (img?.naturalWidth) {
+      const k = Math.min((w - 24) / img.naturalWidth, (h - 24) / img.naturalHeight);
+      g.drawImage(img, x + (w - img.naturalWidth * k) / 2, y + (h - img.naturalHeight * k) / 2, img.naturalWidth * k, img.naturalHeight * k);
+    }
+  });
 }
 
 /** 미니 주기율표 */

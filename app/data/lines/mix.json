@@ -1,0 +1,36 @@
+{
+  "id": "mix",
+  "service_id": "iupac",
+  "name": "혼합선",
+  "subtitle": "에텐 → 메탄알",
+  "color": "line-mix",
+  "description": "알켄·알카인까지 고루",
+  "station_ids": [
+    "ethene",
+    "propane",
+    "ethanol",
+    "ethyne",
+    "propanone",
+    "benzene",
+    "propene",
+    "chloromethane",
+    "ethanoic-acid",
+    "but-1-ene",
+    "methoxymethane",
+    "phenol",
+    "propyne",
+    "methanal"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "고등학교 화학"
+  ],
+  "level": 3,
+  "status": "open",
+  "order": 204,
+  "featured": [
+    "ethene",
+    "ethyne",
+    "propanone"
+  ]
+}

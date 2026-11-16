@@ -9,10 +9,19 @@
     "order": 1,
     "blurb": "주기율표 노선에서 원소를 달려요",
     "groups": [
-      { "id": "zone", "label": "족·구간 노선" },
-      { "id": "period", "label": "주기선" }
+      {
+        "id": "zone",
+        "label": "족·구간 노선"
+      },
+      {
+        "id": "period",
+        "label": "주기선"
+      }
     ],
-    "study": { "path": "table", "label": "주기율표 학습" },
+    "study": {
+      "path": "table",
+      "label": "주기율표 학습"
+    },
     "fields": {
       "number": {
         "label": "원자번호"
@@ -47,8 +56,14 @@
     "order": 2,
     "blurb": "몸속 기관계 노선에서 기관을 달려요",
     "groups": [
-      { "id": "basic", "label": "기초 · 중학교" },
-      { "id": "advanced", "label": "심화 · 생명과학Ⅰ" }
+      {
+        "id": "basic",
+        "label": "기초 · 중학교"
+      },
+      {
+        "id": "advanced",
+        "label": "심화 · 생명과학Ⅰ"
+      }
     ],
     "fields": {
       "order": {
@@ -68,6 +83,44 @@
       "recall",
       "sequence",
       "scramble"
+    ]
+  },
+  {
+    "id": "iupac",
+    "name": "IUPAC_Metro",
+    "subject": "chemistry",
+    "status": "open",
+    "map_module": "molecule",
+    "default_line": "alkane",
+    "order": 3,
+    "blurb": "분자 모형을 보고 이름을 달려요",
+    "groups": [
+      {
+        "id": "basic",
+        "label": "고등학교"
+      },
+      {
+        "id": "advanced",
+        "label": "어려운 분자"
+      }
+    ],
+    "fields": {
+      "order": {
+        "label": "순서"
+      },
+      "model": {
+        "label": "분자 모형"
+      },
+      "name": {
+        "label": "이름",
+        "matcher": "ko_text",
+        "input": "submit"
+      }
+    },
+    "modes": [
+      "mol-trace",
+      "mol-recall",
+      "mol-scramble"
     ]
   }
 ]

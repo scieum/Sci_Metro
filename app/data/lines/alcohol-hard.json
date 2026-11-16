@@ -1,0 +1,27 @@
+{
+  "id": "alcohol-hard",
+  "service_id": "iupac",
+  "name": "알코올 심화선",
+  "subtitle": "2-프로판올 → 사이클로헥산올",
+  "color": "line-alcohol-hard",
+  "description": "-OH 위치와 개수",
+  "station_ids": [
+    "propan-2-ol",
+    "butan-2-ol",
+    "2-methylpropan-2-ol",
+    "propane-1,2,3-triol",
+    "cyclohexanol"
+  ],
+  "group": "advanced",
+  "curriculum": [
+    "심화"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 211,
+  "featured": [
+    "propan-2-ol",
+    "propane-1,2,3-triol",
+    "cyclohexanol"
+  ]
+}

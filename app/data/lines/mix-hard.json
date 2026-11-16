@@ -1,0 +1,36 @@
+{
+  "id": "mix-hard",
+  "service_id": "iupac",
+  "name": "혼합 심화선",
+  "subtitle": "2-메틸프로펜 → 사이클로헥산올",
+  "color": "line-mix-hard",
+  "description": "시스·트랜스, 할로젠, 에터, 아민까지",
+  "station_ids": [
+    "2-methylpropene",
+    "2,2-dimethylpropane",
+    "cis-but-2-ene",
+    "butan-2-ol",
+    "trans-but-2-ene",
+    "dichloromethane",
+    "butanone",
+    "trichloromethane",
+    "methyl-ethanoate",
+    "ethoxyethane",
+    "aniline",
+    "methanamine",
+    "naphthalene",
+    "cyclohexanol"
+  ],
+  "group": "advanced",
+  "curriculum": [
+    "심화"
+  ],
+  "level": 3,
+  "status": "open",
+  "order": 214,
+  "featured": [
+    "cis-but-2-ene",
+    "trichloromethane",
+    "aniline"
+  ]
+}

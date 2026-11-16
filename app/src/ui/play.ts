@@ -113,7 +113,8 @@ export function renderPlay(app: HTMLElement, svc: Service, lineId: string, modeI
       cur.classList.add('organ');
       nEl.textContent = `${e.n}번째 역`;
       sEl.hidden = true; kEl.hidden = true; dEl.hidden = false;
-      dEl.textContent = prompt === 'desc' ? e.desc ?? '' : '다음 역은?';
+      // 분자는 모형 그림이 지도 자리에 크게 나온다 (map/molecule.ts)
+      dEl.textContent = prompt === 'desc' ? e.desc ?? '' : prompt === 'model' ? '이 분자의 이름은?' : '다음 역은?';
       dEl.classList.toggle('q', prompt !== 'desc');
       slotEl.style.order = '3';
       input.className = 'mid';
@@ -121,7 +122,7 @@ export function renderPlay(app: HTMLElement, svc: Service, lineId: string, modeI
       traceAnswer = mode!.ghost ? e.k : '';
       drawTrace();
       input.placeholder = '이름으로';
-      $('what').textContent = prompt === 'desc' ? '이름 · Enter로 제출' : '노선도에서 다음 역 이름 · Enter';
+      $('what').textContent = prompt === 'desc' ? '이름 · Enter로 제출' : prompt === 'model' ? '모형을 보고 분자 이름 · Enter로 제출' : '노선도에서 다음 역 이름 · Enter';
       $('hint').hidden = true;
       cur.classList.remove('ok');
       return;
@@ -289,7 +290,7 @@ function renderResult(app: HTMLElement, c: ResultCtx) {
 
   app.innerHTML = `<div class="result" style="--line:${color}">
     <div class="arrive" role="status">종착역 도착 · ${esc(line.name)}${c.retry ? ' (틀린 역)' : ''} · ${esc(c.modeLabel)}</div>
-    <div class="cur${last.s ? '' : ' organ'}" style="--cat:${last.tint};border-color:var(--line);box-shadow:none"><span class="n num">${last.n}</span>${last.s ? `<span class="s">${esc(last.s)}</span>` : ''}<span class="k">${esc(last.k)}</span>${last.desc ? `<span class="d">${esc(last.desc)}</span>` : ''}</div>
+    <div class="cur${last.s ? '' : ' organ'}" style="--cat:${last.tint};border-color:var(--line);box-shadow:none"><span class="n num">${last.n}</span>${last.s ? `<span class="s">${esc(last.s)}</span>` : ''}<span class="k">${esc(last.k)}</span>${last.desc ? `<span class="d">${esc(last.desc)}</span>` : ''}${last.img ? `<img class="mol" src="${last.img}" alt=""/>` : ''}</div>
     <div class="stats">
       <div><span class="caption sub">시간</span><span class="title-m num">${recTime(res.duration_ms)}</span>${recNote}</div>
       <div><span class="caption sub">정확도</span><span class="title-m num">${pct(res.accuracy)}</span><span class="caption sub num">${res.first_try_correct} / ${res.total_stations}역 한 번에</span></div>
@@ -333,8 +334,8 @@ function renderResult(app: HTMLElement, c: ResultCtx) {
   });
 }
 
-/** 역 칸. 기호가 없는 역(기관)은 이름을 크게, 다시 볼 역에서는 하는 일도 */
+/** 역 칸. 기호가 없는 역(기관·분자)은 이름을 크게, 다시 볼 역에서는 하는 일·모형 그림도 */
 export function tileHtml(e: StopView, cls: string, showAll: boolean, withDesc = false) {
-  if (!e.s) return `<div class="tile organ ${cls}" style="--cat:${e.tint}">${e.n ? `<span class="n num">${e.n}</span>` : ''}<span class="k">${showAll ? esc(e.k) : '?'}</span>${withDesc && e.desc ? `<span class="dd">${esc(e.desc)}</span>` : ''}</div>`;
+  if (!e.s) return `<div class="tile organ ${cls}" style="--cat:${e.tint}">${e.n ? `<span class="n num">${e.n}</span>` : ''}<span class="k">${showAll ? esc(e.k) : '?'}</span>${withDesc && e.desc ? `<span class="dd">${esc(e.desc)}</span>` : ''}${withDesc && e.img ? `<img class="mol" src="${e.img}" alt=""/>` : ''}</div>`;
   return `<div class="tile ${cls}" style="--cat:${e.tint}"><span class="n num">${e.n}</span><span class="s">${showAll ? esc(e.s) : '?'}</span><span class="k">${showAll ? esc(e.k) : '?'}</span></div>`;
 }

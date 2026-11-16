@@ -1,0 +1,30 @@
+{
+  "id": "alkane-hard",
+  "service_id": "iupac",
+  "name": "포화탄화수소 심화선",
+  "subtitle": "2-메틸프로페인 → 사이클로헥세인",
+  "color": "line-alkane-hard",
+  "description": "가지 달린 사슬과 고리",
+  "station_ids": [
+    "2-methylpropane",
+    "2-methylbutane",
+    "2,2-dimethylpropane",
+    "2,3-dimethylbutane",
+    "3-ethylpentane",
+    "2,2,4-trimethylpentane",
+    "cyclopentane",
+    "cyclohexane"
+  ],
+  "group": "advanced",
+  "curriculum": [
+    "심화"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 210,
+  "featured": [
+    "2-methylpropane",
+    "2,2-dimethylpropane",
+    "cyclohexane"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "alcohol",
+  "service_id": "iupac",
+  "name": "알코올선",
+  "subtitle": "메탄올 → 1,2-에테인다이올",
+  "color": "line-alcohol",
+  "description": "-OH가 붙은 분자",
+  "station_ids": [
+    "methanol",
+    "ethanol",
+    "propan-1-ol",
+    "butan-1-ol",
+    "ethane-1,2-diol"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "고등학교 화학"
+  ],
+  "level": 1,
+  "status": "open",
+  "order": 201,
+  "featured": [
+    "methanol",
+    "ethanol",
+    "ethane-1,2-diol"
+  ]
+}

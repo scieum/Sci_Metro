@@ -1,0 +1,28 @@
+{
+  "id": "carbonyl",
+  "service_id": "iupac",
+  "name": "카보닐선",
+  "subtitle": "메탄알 → 에탄산 에틸",
+  "color": "line-carbonyl",
+  "description": "알데하이드·케톤·카복실산·에스터",
+  "station_ids": [
+    "methanal",
+    "ethanal",
+    "propanone",
+    "methanoic-acid",
+    "ethanoic-acid",
+    "ethyl-ethanoate"
+  ],
+  "group": "basic",
+  "curriculum": [
+    "고등학교 화학"
+  ],
+  "level": 2,
+  "status": "open",
+  "order": 202,
+  "featured": [
+    "methanal",
+    "propanone",
+    "ethanoic-acid"
+  ]
+}

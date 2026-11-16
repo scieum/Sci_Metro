@@ -12,6 +12,10 @@
   /* Organism_Metro 노선 (work/organism/S2/keyscreens.md) */
   --line-digestive: #c8743a; --line-circulation: #b5474b; --line-respiration: #3a8fb7; --line-excretion: #b8962e; --line-reaction: #7b5fc7; --line-reflex: #4f6bb0;
   --line-vision: #2f7d6d; --line-hearing: #a2577d; --line-nephron: #8a6d1f; --line-neuron: #5b3fa0; --line-reflex-arc: #4b5563; --line-oxygen: #1f7a8c;
+  /* IUPAC_Metro 노선: 같은 주제는 같은 색, 어려운 분자는 진하게 */
+  --line-alkane: #5f7a8c; --line-alkane-hard: #3d5566; --line-alcohol: #d9822b; --line-alcohol-hard: #a85d14;
+  --line-carbonyl: #c2443c; --line-carbonyl-hard: #8f2d27; --line-benzene: #2f8f5b; --line-benzene-hard: #1d6640;
+  --line-mix: #6b5bd1; --line-mix-hard: #4a3a9e;
   --r8: 8px; --r12: 12px; --pill: 999px;
   --font: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   color-scheme: light;
@@ -22,6 +26,7 @@
     --text: #f1f3f7; --text-sub: #9aa1ae; --text-disabled: #5b616d;
     --primary: #4c6ef5; --danger: #fa5252; --success: #51cf66;
     --line-basic: #c9ced8; --line-p7: #9aa3b2; --line-p2: #7d8fc4; --line-full: #6c9bd8; --line-reflex-arc: #9aa3b2;
+    --line-alkane-hard: #7d97a8; --line-carbonyl-hard: #c4564e; --line-benzene-hard: #3fa56c; --line-mix-hard: #7d6fe0;
     color-scheme: dark;
   }
 }
@@ -412,3 +417,11 @@ dialog.edetail { max-height: calc(100dvh - 32px); overflow-y: auto; }
 .seg a:hover, .seg button:hover { color: var(--text); }
 .table-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin: 16px 0 12px; }
 .table-tools p { margin: 0; }
+
+/* IUPAC_Metro: 이번 역 분자 모형 (그림이 늘 흰 바탕이라 다크 모드에서도 흰 판) */
+.mmap { display: flex; align-items: center; justify-content: center; width: min(100%, 560px); margin: 0 auto; height: min(36vh, 300px); padding: 16px; background: #fff; border-radius: var(--r8); border: 3px solid var(--line); }
+.mthumb { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 4px; aspect-ratio: 2 / 1; padding: 6px; background: #fff; border-radius: var(--r8); }
+.mthumb img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.mmap img { height: 100%; width: auto; max-width: 100%; object-fit: contain; }
+.tile img.mol { display: block; width: 100%; max-height: 72px; object-fit: contain; margin-top: 4px; background: #fff; border-radius: 4px; }
+.result .cur img.mol { max-width: 100%; max-height: 120px; background: #fff; border-radius: var(--r8); }
